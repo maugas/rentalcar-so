@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-md-1 mt-2">
+    </div>
+
+    <div class="col-md-8 mt-2 shadow p-2">
+      <div class="row">
+        <div class="shadow p-1">
+            <img    width="100%" height="400"   alt="Bulsho Logo"  src="../../assets/Mogadishu2.png"/>
+        </div>
+         <hr>
+      </div>
+
+      <div class="row">
+          <!--div class="col  mt-1">
+            <input type="text" class="form-control" placeholder="Pick-up" aria-label="Pick-up">
+          </div-->
+          <div class="col mt-1">
+            <select class="form-select form-select-sm" aria-label=".form-select-sm"  name="location" #location>
+              <option selected>Pick-up</option>
+              <option *ngFor="let loc of locations | async">
+                {{loc.location}}
+              </option>  
+            </select>
+          </div>
+
+          <div class="col mt-1">
+            <input disabled="true"  type="text" class="form-control" placeholder="Same as pick-up" aria-label="Same as pick-up">
+          </div>
+        </div>
+   
+    
+        <div class="row">
+          <td class="col  mt-2">
+            <input type="date"  [min]="currentDate" class="form-control" placeholder="Pick-up date" aria-label="Pick-up date">
+          </td>
+          <td class="col mt-2">
+            <input type="date" min="2023-11-21" class="form-control" placeholder="Drop-off date" aria-label="Drop-off date">
+          </td>
+          <td class="col  mt-2">
+            <input type="time" value="10:10" class="form-control" placeholder="Pick-up time" aria-label="Pick-up">
+          </td>
+          <td class="col mt-2">
+            <input type="time" value="10:10" class="form-control" placeholder="Drop-of time" aria-label="Drop-of time">
+          </td>
+        </div>
+
+      <div class="row">
+        <td class="col-md-2"> 
+          <button type="button" class="btn btn-outline-secondary mt-3" routerLink="/available" (click)="getAvailableCars('55')">Search</button>
+        </td>
+      </div>
+
+      </div>    
+
+    <div class="col-md-1 mt-2">
+    
+    </div>
+
+  </div>
+</div>

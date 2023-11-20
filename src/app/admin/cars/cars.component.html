@@ -1,0 +1,109 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 mt-2">
+          <h5 class="t">{{ carAction }}</h5>
+           <!--  Beginning of card -->
+          <form [formGroup]="carForm" (ngSubmit)="manageCar()">
+            <div class="card border-0 shadow p-3">
+  
+                   <div class="mt-2">
+                        <input type="text" class="form-control" formControlName="registration" placeholder="Registration" name="registration" ngModel>
+                    </div>
+                   
+                    <div class="mt-2"> 
+                        <!--input type="text" class="form-control" formControlName="make" placeholder="Make" name="make" ngModel -->
+                        <select class="form-select form-select-sm" aria-label=".form-select-sm"  formControlName="make" #make (change)="onChange(make.value)">
+                          <option selected>Make</option>
+                          <option *ngFor="let mk of makes | async">
+                            {{mk.make}}
+                          </option>  
+                        </select>
+  
+                      </div>
+                    
+                    <div class="mt-2">
+                        <input type="text" class="form-control" formControlName="model" placeholder="Model" name="model" ngModel>
+                    </div>
+  
+
+                    <div class="mt-2" >
+                      <!--select class="form-select form-select-sm" aria-label=".form-select-sm" formControlName="type" #type (change)="onChange(type.value)"-->
+                       
+                      <select class="form-select form-select-sm" aria-label=".form-select-sm"  formControlName="type" #type (change)="onChange(type.value)">
+                        <option selected>Type</option>
+                        <option value="Compact">Compact</option>
+                        <option value="Full-Size">Full-Size</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Luxury">Luxury</option>
+                      </select>
+                   </div>
+
+                    <div class="mt-2">
+                      <select class="form-select form-select-sm" aria-label=".form-select-sm"  formControlName="location" #location (change)="onChange(location.value)">
+                        <option selected>Location</option>
+                        <option *ngFor="let loc of locations | async">
+                          {{loc.location}}
+                        </option>  
+                      </select>
+                    </div>
+
+
+                    <div class="mt-2">
+                      <input formControlName="price" type="text" class="form-control"  placeholder="Rent $" name="price" ngModel >
+                    </div>
+
+                    <div class="mt-2" >
+                      <select class="form-select form-select-sm" aria-label=".form-select-sm" formControlName="status" #status (change)="onChange(status.value)">
+                        <option selected>Status</option>
+                        <option *ngFor="let cs of carStatus | keyvalue" [value]="cs.value">
+                          {{cs.value}}                  
+                      </select>
+                   </div>
+
+                   <tr>
+                    <td class="col-md-1"> <button type="button" class="btn btn-outline-secondary mt-4" routerLink="/cars" (click)=" clearCarForm()" >Cancel</button></td>
+                    <td class="col-md-1"> <button type="button" class="btn btn-outline-secondary mt-4" routerLink="/cars" (click)=" saveCar()" >Save</button></td>
+                     
+                   </tr>
+                </div>
+           </form>
+            <!-- End of card -->
+        </div>
+        <div class="col-md-8 mt-2">
+            <h5 class="t">Car list</h5>
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Registration</th>
+                            <th scope="col">Make</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let car of carsData | async 
+                          paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                            <td>{{car.registration}}</td>
+                            <td>{{car.make}}</td>
+                            <td>{{car.model}}</td>
+                            <td>{{car.type}}</td>
+                            <td>{{car.location}}</td>
+                            <td>{{car.price | currency}}</td>
+                            <td>{{car.status}}</td>
+                            <td><a href="#" style="cursor:pointer" routerLink="/cars" (click)="editCar(car)">Edit</a> | 
+                              <a href="#" style="cursor:pointer" routerLink="/cars" (click)="deleteCar(car.id)"> Delete</a> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="center"><pagination-controls (pageChange)="page = $event"></pagination-controls></div> 
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+

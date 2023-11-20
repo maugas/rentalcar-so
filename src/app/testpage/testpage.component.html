@@ -1,0 +1,72 @@
+<br><br><br>
+<form #f="ngForm" (ngSubmit)="addCarData(f)">  
+  <input type="text" name="registration" ngModel>
+  <br>
+  <input type="text" name="make" ngModel>
+  <br>
+  <input type="text" name="model" ngModel>
+  <br>
+  <input type="text" name="type" ngModel>
+  <br>
+  <input type="text" name="location" ngModel>
+  <br><br>
+
+  <p>You select your type {{ selectedType }} using change event</p>
+  <div class="mt-2" >
+      <select class="form-select form-select-sm" aria-label=".form-select-sm example" #sel (change)="onChange(sel.value)">
+      <option selected>Open this select menu</option>
+      <option *ngFor="let cs of carStatus | keyvalue" [value]="cs.value">
+        {{cs.value}}
+      </option>  
+    </select>
+ </div>
+
+       
+  <button type="submit">Save Data</button>
+  <br><br>
+</form>
+
+
+<!--button (click)="gotoCarlist()">Goto CarList</button-->
+<a href="#" role="button"   routerLink="/admin/carsList"> Cars List     </a>
+<ul>
+  <h6> CARS </h6>
+  <li *ngFor="let car of carsData | async">
+    {{car.registration}} | {{car.make}} | {{car.model}} | {{car.type}} | {{car.location}}
+    <button (click)="updateCar(car.id)">Edit</button>
+    <button (click)="deleteCar(car.id)">Delete</button>
+    <button (click)="getCarById(car.id)">GetById</button>
+  </li>
+
+<h6> LOCATIONS</h6>
+<li *ngFor="let loc of locationData | async">
+ Location: {{loc.location}} <br> Address: {{loc.address}} <br> Telephone: {{loc.telephone}} <br>
+</li>
+
+</ul>
+
+<ul>
+<h6><u> Car Status</u></h6>
+<p *ngFor="let cs of carStatus | keyvalue">
+  {{cs.value}}
+</p>
+
+<h6><u> Rent Status</u></h6>
+
+<p *ngFor="let rs of rentalStatus | keyvalue">
+  {{rs.value}}
+</p>
+
+<h6><u>Car Types</u> </h6>
+<p *ngFor="let ts of type | keyvalue">
+  {{ts.value}}
+</p>
+
+</ul>
+
+<h6>  available CARS </h6>
+<ul>
+<li *ngFor="let car of availCars">
+  {{car.registration}} | {{car.make}} | {{car.model}} | {{car.type}} | {{car.location}}
+</li>
+</ul>
