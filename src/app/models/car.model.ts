@@ -1,14 +1,19 @@
-export interface Car {
-    id?: string;
-    registration: string;
-    make: string;
-    model: string;
-    type: string;
-    location: string;
-    carImgPath: string;
-    price: number;
-    status: CarStatus;
+export class Car {
+    id?: string ="";
+    registration: string="";
+    make: string ="";
+    model: string ="";
+    type: string ="";
+    location: string ="";
+    carImgPath: string ="";
+    price: string = "";
+    status: CarStatus = CarStatus.Available;
    } 
+
+   export class Cars{
+    id : string = ""
+    car: Car[]=[];
+   }
 
    export interface Location {
     id?: number;

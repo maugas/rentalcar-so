@@ -26,25 +26,21 @@ export class CarService {
    }
 
    getAvailableCars(date:string){
-    const carCollection = collection(this.fs, "cars");
-    //return this.carsData = collectionData(carCollection, {idField : 'id'});
-
-    // Create a query against the collection.
-    const q = query(carCollection, where("1", "==", "1"));
-    let querySnapshot!:any;
-    console.log("service logging : ")
-    return getDocs(q)
-      // .then ( (data:any) => {
-      //   querySnapshot = data;
-      //   querySnapshot.forEach((doc:any) => {
-      //     // doc.data() is never undefined for query doc snapshots
-      //     console.log(doc.id, " => ", doc.data());
-      //   })
-      // })
-      console.log("donoe service log")
-
-    //  return querySnapshot;
-    //return getDocs(q);
+      // Initialize Firestore and get a reference to the service
+    const db = this.fs;
+      const q = query(collection(db, "cars"), where("status", "==", 'Available'));
+      
+      let querySnapshotList : any[]=[];
+      const querySnapshot =  getDocs(q);
+       querySnapshot.then ( (data) => {
+        data.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+             console.log(doc.id, " => ", doc.data());
+             querySnapshotList.push(doc.data());
+        });
+       } )
+    
+    return querySnapshotList;
    }
   
    getCarById(id:string){
