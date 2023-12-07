@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1 mt-5">
+      </div>
+      <div class="col-md-8 mt-5 shadow p-2">
+        <div class="row">
+          <div class="shadow p-1">
+              <img    width="100%" height="100"   alt="Bulsho Logo"  src="../../assets/Logo-bulsho-new.png"/>
+          </div>
+           <hr>
+        </div>
+        <div class="row">
+            <div class="col-md-7">
+                {{userName}}
+                <p>Thank you for booking</p>
+                Your booking number is: <strong>{{bookingNumber}}</strong>
+                <div>
+                    <td class="col-md-2"> <button type="button" class="btn btn-outline-secondary mt-3" routerLink="/" (click)="close()">Close</button></td>
+                </div>
+            </div>
+      </div>
+    </div>
+  </div>

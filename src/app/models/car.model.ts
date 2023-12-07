@@ -1,3 +1,8 @@
+export class Booking{
+    name: string = '';
+    refrence: string ='';
+}
+
 export class Car {
     id?: string ="";
     registration: string="";
@@ -24,13 +29,26 @@ export class Car {
 
    export interface Rental {
     id?: number;
-    pickupDate: Date;
+    location: string;
+    bookingId: string;
+    pickupDate: string;
     pickupTime: string;
-    dropoffDate: Date;
+    dropoffDate: string;
     dropoffTime: string;
     status: RentalStatus;
+    carId: string;
     registration: string;
     userId : string;
+    userName : string;
+    userPhone : string;
+    userAddress: string;
+    userEmail : string;
+    carPrice : number;
+    totalCharge: number;
+    discount : number;
+    tax:number;
+    otherCharge: number;
+    bookedDate: string;
    }
 
    export interface Make {
@@ -44,7 +62,7 @@ export class Car {
 
    export enum Type {
     Compact = "Compact",
-    FullSize = "FullSize",
+    FullSize = "Full-Size",
     SUV = "SUV",
     Luxury = "Luxury",
     Other = "Other",
@@ -66,20 +84,21 @@ export class Car {
     Missing = "Missing",
    }
 
-   export interface User {
-    id?: string;
-    firstName: string;
-    middleName: string;
-    lastName: string;
-    address: string;
-    email: string;
-    telephone: string;
-    contact: string;
-    dl: string;
+   export class User {
+    id?: string ="";
+    fname: string ="";
+    mname: string ="";
+    lname: string ="";
+    address: string ="";
+    email: string ="";
+    telephone: string ="";
+    coSigner: string ="";
    }
 
    export interface UserPI {
     id?: string;
+    userId : string;
+    firstName: string;
     lastName: string;
     dl: string;
     dlCountry: string;

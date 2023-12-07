@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-1 mt-5">
+          <div>
+           <!--  Beginning of card -->
+          </div>
+
+            <!-- End of card -->
+        </div>
+
+        <div class="col-md-10 mt-5 card border-0 shadow p-3">
+          <h5 class="t">Reservations</h5>
+          <!--td><a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()">Edit</a> | 
+            <a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()"> Delete</a> </td-->
+
+
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Location</th>
+                            <th scope="col">Car</th>
+                            <th scope="col">Pickup</th>
+                            <th scope="col">Dropoff</th>
+                            <th scope="col">Charge</th>
+                            <th scope="col">Ref</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Telephone</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let booking of querySnapshotList | keyvalue 
+                          paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                            <td>{{booking.value["bookedDate"]}}</td>
+                            <td>{{booking.value["location"]}}</td>
+                            <td>{{booking.value["registration"]}}</td>
+                            <td>{{booking.value["pickupDate"]}}</td>
+                            <td>{{booking.value["dropoffDate"]}}</td>
+                            <td>{{booking.value["totalCharge"] | currency}}</td>
+                            <td>{{booking.value["bookingId"]}}</td>
+                            <td>{{booking.value["userName"]}}</td>
+                            <td>{{booking.value["userPhone"]}}</td>
+
+                            <td><a href="#" style="cursor:pointer" routerLink="/locations" (click)="editLoc(booking)">Edit</a> | 
+                              <a href="#" style="cursor:pointer" routerLink="/locations" (click)="deleteLoc('123')"> Delete</a> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="center"><pagination-controls (pageChange)="page = $event"></pagination-controls></div> 
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+

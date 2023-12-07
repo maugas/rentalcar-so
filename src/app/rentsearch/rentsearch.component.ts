@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CarService } from '../services/car.service';
 import { Observable, map } from 'rxjs';
 import { formatDate } from '@angular/common';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-rentsearch',
@@ -16,7 +17,13 @@ export class RentsearchComponent implements OnInit {
 
   carsData! : Observable<any>;
 
-  constructor(private carService: CarService) { }
+  constructor(private fb: FormBuilder, private carService: CarService) { }
+
+  searchForm = this.fb.group({
+    pickupLoc: new FormControl('', [Validators.required]), 
+    pickupDate: [''], dropoffDate: [''], pickupTime: ['10:30'], 
+    dropoffTime: ['10:30'], dropoffLoc: ['']
+  });
 
   ngOnInit(): void {
     this.gatAllLocations();
@@ -28,27 +35,20 @@ export class RentsearchComponent implements OnInit {
     console.log("sdate :" + sdate);
     var minReturnDate = formatDate(new Date(sdate), "yyyy-MM-dd", 'en')
     console.log("minReturnDate :" + minReturnDate);
-
+    
+    localStorage.setItem("searchForm", "")
   }
 
   gatAllLocations(){
     this.locations = this.carService.getAllLocations();
   }
 
-  getAvailableCars(dt:string){
-    this.carsData = this.carService.getAllCars();
+  getAvailableCars(){
+    const {pickupLoc, pickupDate, pickupTime, dropoffDate, dropoffTime } = this.searchForm.value;
+    var days =this.carService.calculateDiffDates(pickupDate, dropoffDate);
+    localStorage.setItem("searchForm", pickupLoc+"|"+pickupDate+"|"+ pickupTime+"|"+ dropoffDate+"|"+ dropoffTime + "|" + days);
+  }
     
-    console.log(this.carsData)
-    this.carsData.pipe( map((items:any) => {
-          items.filter ((item:any) => item.status === "Available")
-      }
-      )).subscribe((data)=> {  
-        console.log("data------")   
-        console.log(data);
-      })
-
-   }
-    
-  
+  manageSearch(){}
 }
 

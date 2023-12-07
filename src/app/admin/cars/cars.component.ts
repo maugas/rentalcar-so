@@ -31,19 +31,6 @@ rentalStatus: typeof RentalStatus = RentalStatus;
 
 carAction:string =" Add car";
 carId:string ="";
-
-dropdownSettings: any = {};
- 
-
-options = [
-  { id: 1, name: 'test' },
-  { id: 2, name: 'test 2' },
-];
-
-selectedItems: any =  [
-  { id: 1, name: 'Doe 1' },
-  { id: 2, name: 'Smith 2' }
-];
  
 
 constructor(private fb: FormBuilder, private carService : CarService ) { }
@@ -81,7 +68,6 @@ carForm = this.fb.group({
  
  
   onChange(val:any) {
-    console.log(val);
   }
   
   gatAllCars(){

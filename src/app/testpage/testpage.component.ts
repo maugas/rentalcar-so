@@ -5,6 +5,7 @@ import { CarStatus, Type, RentalStatus, Car, Cars } from '../models/car.model'
 import { Router } from '@angular/router';
 import { CarService } from '../services/car.service';
 import { DocumentData } from '@angular/fire/compat/firestore';
+import { formatDate } from '@angular/common';
 
 
 
@@ -22,13 +23,17 @@ export class TestpageComponent implements OnInit {
   availCars! :any;
 
   locationData! : Observable<any>;
-  //querySnapshot! : Observable<QuerySnapshot<DocumentData>>;
   querySnapshot! : any;
-  querySnapshotList : any[] =[];
+  querySnapshotList0 : any[] =[];
+  querySnapshotList: Record<string, any> = [];
+
 
   type: typeof Type = Type;
   carStatus: typeof CarStatus = CarStatus;
   rentalStatus: typeof RentalStatus = RentalStatus;
+
+
+
 
 
   constructor(private fs:Firestore, private router: Router, private carService: CarService){
@@ -39,6 +44,9 @@ export class TestpageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getAvailableCars();
+
+    let todayDate =  formatDate( new Date().toISOString(), 'dd/MM/yyyy hh:mm', 'en-US', 'GMT+3');
+    console.log(todayDate);
   }
 
  addCarData(f:any){
@@ -62,13 +70,10 @@ export class TestpageComponent implements OnInit {
 
  getCarById(id:string){
   const carInstance = doc(this.fs, "cars", id);
-  //onst docSnap = await getDoc(carInstance);
   getDoc(carInstance)
    .then ((value)=> {
       this.currentCarData = {id:value.id, ... value.data()}
       console.log(this.currentCarData);
-    //console.log(value.id)
-    //console.log(value.data())
    } )
    .catch(err => console.log(err));
   
@@ -114,8 +119,7 @@ getAvailableCars(){
 
 
  getTestData(){
-  // Initialize Firestore and get a reference to the service
-const db = this.fs;
+  const db = this.fs;
   const q = query(collection(db, "cars"), where("make", "==", 'Toyota'));
 
   const querySnapshot =  getDocs(q);
@@ -131,17 +135,8 @@ const db = this.fs;
 
 
  getNewTestData(){
-  // Initialize Firestore and get a reference to the service
    this.querySnapshotList = this.carService.getAvailableCars("123");
 }
-
-
-// getAllavailableCarsTest(){
-//   this.querySnapshot
-//   .subscribe( result => {
-//      this.querySnapshotList = result;
-//   })
-// }
 
 
 }

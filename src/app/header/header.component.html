@@ -1,41 +1,111 @@
 
-  <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <!--nav class="navbar navbar-expand-sm navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand text-bold" href="#">
-          <img    width="100"    alt="Bulsho Logo"  src="../../assets/Logo-bulsho.png"/>
+          <img    width="250"    alt="Bulsho Logo"  src="../../assets/Logo-bulsho.png"/>
           <span> &nbsp;&nbsp;&nbsp; </span>
-          <span class="text-uppercase"> Bulsho Rental Car </span>
-        </a>
+          <span class="text-uppercase"> Bulsho Rental Car </span-->
+        <!--/a-->
   
-      <!-- Admin start -->
+      <!-- Admin start >
      <div >
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
               aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
   
-      <div class="collapse navbar-collapse" id="navbarNav" *ngIf="isAdmin">
+      <div class="collapse navbar-collapse" id="navbarNav" >
         <ul class="navbar-nav">
-          <li  class="nav-item dropdown">
-            <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-             routerLink="/userList" data-bs-target="dropdown" aria-expanded="false">  Users 
+          <li  class="nav-item">
+            <a href="#" class="nav-link" id="navbarDropdown" role="button"
+             routerLink="/contact"  aria-expanded="false">  Contact us 
             </a>
            </li>
            <li  class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-              routerLink="/clientList" data-bs-target="dropdown" aria-expanded="false">  Clients  
+              routerLink="/about" data-bs-target="dropdown" aria-expanded="false">  About  
             </a>
-           </li>
-           <li  class="nav-item dropdown">
+           </li-->
+           <!-- <li  class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
                routerLink="/reportList" data-bs-target="dropdown" aria-expanded="false">  Questions 
             </a>
-           </li>
-        </ul>
+           </li> -->
+        <!--/ul>
       </div>
-     </div>
-      <!-- Admin start -->
+     </div-->
+      <!-- Admin start >
   
     </div>
-  </nav>
+  </nav-->
+  <div *ngIf="isAdmin">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div  class="container-fluid mt-5"  >
+        <a class="navbar-brand text-bold" href="#">
+          <img    width="250"    alt="Bulsho Logo"  src="../../assets/Logo-bulsho.png"/>
+          <span> &nbsp;&nbsp;&nbsp; </span>
+          
+          <!--span class="text-uppercase"> Bulsho Rental Car </span-->
+        </a>
+      <div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="nav navbar-nav navbar-center">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/admin/reservations"><strong>Reservations</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" routerLink="/admin/users"><strong>Users</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLink="/admin/locations"><strong>Locations</strong></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/admin/cars"><strong>Cars</strong></a>
+            </li>
+
+            <!--li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/admin/models"><strong>Car-Make-Models</strong></a>
+            </li-->
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    </nav>
   
+  </div>
+
+  
+  <div *ngIf="!isAdmin">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div  class="container-fluid mt-5"  >
+      <a class="navbar-brand text-bold" href="#">
+        <img    width="250"    alt="Bulsho Logo"  src="../../assets/Logo-bulsho.png"/>
+        <span> &nbsp;&nbsp;&nbsp; </span>
+        
+        <!--span class="text-uppercase"> Bulsho Rental Car </span-->
+      </a>
+    <div>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="nav navbar-nav navbar-center">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#"><strong>Packages</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#"><strong>Contacts</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><strong>About Us</strong></a>
+        </ul>
+      </div>
+    </div>
+  </div>
+  </nav>
+
+</div> 

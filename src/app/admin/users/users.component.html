@@ -1,0 +1,91 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 mt-5">
+          <div class="card border-0 shadow p-3">
+          <h5 class="t">{{ userAction }}</h5>
+           <!--  Beginning of card -->
+          <form [formGroup]="usersForm" (ngSubmit)="manageCar()">
+  
+                   <div class="mt-2">
+                        <input type="text" class="form-control" formControlName="fname" placeholder="First name" name="fname">
+                    </div>
+                    <div class="mt-2">
+                        <input type="text" class="form-control" formControlName="lname" placeholder="Last name" name="lname">
+                    </div>
+                    
+                    <div class="mt-2">
+                        <input type="text" class="form-control" formControlName="mname" placeholder="Middle name" name="mname">
+                    </div>
+
+                    <div class="mt-2">
+                        <input type="text" class="form-control" formControlName="address" placeholder="Address" name="address">
+                    </div>
+  
+                    <div class="mt-2">
+                      <input formControlName="telephone" type="text" class="form-control"  placeholder="Telephone" name="telephone">
+                    </div>
+
+                    <div class="mt-2">
+                        <input formControlName="email" type="email" class="form-control"  placeholder="Email" name="email" >
+                      </div>
+
+                      <div class="mt-2">
+                        <input formControlName="cosigner" type="text" class="form-control"  placeholder="Co-Signer" name="cosigner">
+                      </div>
+
+  
+                   <tr>
+                    <td class="col-md-1"> <button type="button" class="btn btn-outline-secondary mt-4" routerLink="/users" (click)=" clearForm()" >Cancel</button></td>
+                    <td class="col-md-1"> <button type="button" class="btn btn-outline-secondary mt-4" routerLink="/users" (click)=" saveUser()" >Save</button></td>
+                     
+                   </tr>
+           </form>
+          </div>
+
+            <!-- End of card -->
+        </div>
+
+        <div class="col-md-8 mt-5 card border-0 shadow p-3">
+          <h5 class="t">Users</h5>
+          <!--td><a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()">Edit</a> | 
+            <a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()"> Delete</a> </td-->
+
+
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">First</th>
+                            <th scope="col">Middle</th>
+                            <th scope="col">Last-Name</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Telephone</th>
+                            <th scope="col">Co-Signer</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let user of userList | 
+                          paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                            <td>{{user.fname}}</td>
+                            <td>{{user.mname}}</td>
+                            <td>{{user.lname}}</td>
+                            <td>{{user.address}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.telephone}}</td>
+                            <td>{{user.cosigner}}</td>
+                            <td><a href="#" style="cursor:pointer" routerLink="/users" (click)="editUser(user)">Edit</a> | 
+                              <a href="#" style="cursor:pointer" routerLink="/users" (click)="deleteUser(user.id)"> Delete</a> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="center"><pagination-controls (pageChange)="page = $event"></pagination-controls></div> 
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+

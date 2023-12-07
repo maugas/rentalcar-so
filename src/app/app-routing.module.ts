@@ -7,16 +7,27 @@ import { CarsComponent } from './admin/cars/cars.component';
 import { RentsearchComponent } from './rentsearch/rentsearch.component';
 import { RentavailableComponent } from './rentavailable/rentavailable.component';
 import { RentbookingComponent } from './rentbooking/rentbooking.component';
+import { RentconfirmComponent } from './rentconfirm/rentconfirm.component';
+import { RentalsComponent } from './admin/rentals/rentals.component';
+import { LocationsComponent } from './admin/locations/locations.component';
+import { UsersComponent } from './admin/users/users.component';
+import { ModelsComponent } from './admin/models/models.component';
 
 const routes: Routes = [
   {path:"test", component:TestpageComponent},
   {path:"search", component: RentsearchComponent },
   {path:"available", component: RentavailableComponent },
   {path:"booking", component: RentbookingComponent },
+  {path:"confirm", component: RentconfirmComponent},
   {path:"admin", component:AdminComponent, children: [
     {path:"login", component:LoginComponent },
     {path:"cars", component:CarsComponent},
-    {path:"", component:AdminComponent}
+    {path:"reservations", component:RentalsComponent},
+    {path:"locations", component:LocationsComponent},
+    {path:"users", component:UsersComponent},
+    {path:"models", component:ModelsComponent},
+    {path:"login", component:LoginComponent},
+    {path:"", component:LoginComponent}
   ]},
   {path:"", redirectTo:"search", pathMatch:"full"},
 

@@ -1,0 +1,73 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4 mt-5">
+          <div class="card border-0 shadow p-3">
+          <h5 class="t">{{ locAction }}</h5>
+           <!--  Beginning of card -->
+          <form [formGroup]="locationForm" (ngSubmit)="manageCar()">
+  
+                   <div class="mt-2">
+                        <input type="text" class="form-control" formControlName="location" placeholder="Location" name="location" ngModel>
+                    </div>
+                   
+                    
+                    <div class="mt-2">
+                        <input type="text" class="form-control" formControlName="address" placeholder="Address" name="address" ngModel>
+                    </div>
+  
+                    <div class="mt-2">
+                      <input formControlName="telephone" type="text" class="form-control"  placeholder="Telephone" name="telephone" ngModel >
+                    </div>
+
+                    <div class="mt-2">
+                        <input formControlName="picture" type="text" class="form-control"  placeholder="Picture" name="picture" ngModel >
+                      </div>
+  
+                   <tr>
+                    <td class="col-md-1"> <button type="button" class="btn btn-outline-secondary mt-4" routerLink="/locations" (click)=" clearForm()" >Cancel</button></td>
+                    <td class="col-md-1"> <button type="button" class="btn btn-outline-secondary mt-4" routerLink="/locations" (click)=" saveLocation()" >Save</button></td>
+                     
+                   </tr>
+           </form>
+          </div>
+
+            <!-- End of card -->
+        </div>
+
+        <div class="col-md-8 mt-5 card border-0 shadow p-3">
+          <h5 class="t">Locations</h5>
+          <!--td><a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()">Edit</a> | 
+            <a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()"> Delete</a> </td-->
+
+
+            <div class="card p-3 shadow">
+                <div class="card-body">
+                    <table class="table table-sm table-hover">
+                        <thead>
+                          <tr>
+                            <th scope="col">Location</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Telephone</th>
+                            <th scope="col">Picture</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let loc of locsData | async 
+                          paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                            <td>{{loc.location}}</td>
+                            <td>{{loc.address}}</td>
+                            <td>{{loc.telephone}}</td>
+                            <td>{{loc.picture}}</td>
+                            <td><a href="#" style="cursor:pointer" routerLink="/locations" (click)="editLoc(loc)">Edit</a> | 
+                              <a href="#" style="cursor:pointer" routerLink="/locations" (click)="deleteLoc(loc.id)"> Delete</a> </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <div class="center"><pagination-controls (pageChange)="page = $event"></pagination-controls></div> 
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+

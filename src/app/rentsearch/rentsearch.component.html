@@ -1,23 +1,60 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-md-1 mt-2">
+    <div class="col-md-1 mt-5">
     </div>
 
-    <div class="col-md-8 mt-2 shadow p-2">
+    <div class="col-md-9 shadow p-2 mt-5">
       <div class="row">
         <div class="shadow p-1">
-            <img    width="100%" height="400"   alt="Bulsho Logo"  src="../../assets/Mogadishu2.png"/>
+            <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img width="80%" height="370"  src="../../assets/1.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h1>Global Online Car Rental</h1>
+                    <h6>Rent cars through our online platform, and rest assured that we'll take care your reservations.</h6>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img width="70%" height="370"  src="../../assets/2.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h1>Best Car Rental Service!</h1>
+                    <h6>Best rental prices with complete transparency, no concealed additional fees, as all charges are inclusive!</h6>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <img width="60%" height="370"  src="../../assets/3.jpg" class="d-block w-100" alt="...">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h1>Fast and Effective Service</h1>
+                    <h6>Choose the car of your choice for an unforgettable journey. Click it, and we'll prepare it for your adventure.</h6>
+                  </div>
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
+            
         </div>
          <hr>
       </div>
 
+    <form [formGroup]="searchForm" (ngSubmit)="manageSearch()">
+
       <div class="row">
-          <!--div class="col  mt-1">
-            <input type="text" class="form-control" placeholder="Pick-up" aria-label="Pick-up">
-          </div-->
           <div class="col mt-1">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm"  name="location" #location>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm"  formControlName="pickupLoc" #pickupLoc>
               <option selected>Pick-up</option>
               <option *ngFor="let loc of locations | async">
                 {{loc.location}}
@@ -33,28 +70,29 @@
     
         <div class="row">
           <td class="col  mt-2">
-            <input type="date"  [min]="currentDate" class="form-control" placeholder="Pick-up date" aria-label="Pick-up date">
+            <input type="date"  [min]="currentDate" class="form-control" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate">
           </td>
           <td class="col mt-2">
-            <input type="date" min="2023-11-21" class="form-control" placeholder="Drop-off date" aria-label="Drop-off date">
+            <input type="date" min="2023-11-21" class="form-control" placeholder="Drop-off date" aria-label="Drop-off date" formControlName="dropoffDate">
           </td>
           <td class="col  mt-2">
-            <input type="time" value="10:10" class="form-control" placeholder="Pick-up time" aria-label="Pick-up">
+            <input type="time" value="10:30" class="form-control" placeholder="Pick-up time" aria-label="Pick-up" formControlName="pickupTime">
           </td>
           <td class="col mt-2">
-            <input type="time" value="10:10" class="form-control" placeholder="Drop-of time" aria-label="Drop-of time">
+            <input type="time" value="10:30" class="form-control" placeholder="Drop-of time" aria-label="Drop-of time" formControlName="dropoffTime">
           </td>
         </div>
 
       <div class="row">
         <td class="col-md-2"> 
-          <button type="button" class="btn btn-outline-secondary mt-3" routerLink="/available" (click)="getAvailableCars('55')">Search</button>
+          <button type="button" class="btn btn-outline-secondary mt-3" routerLink="/available" (click)="getAvailableCars()">Search</button>
         </td>
       </div>
+    </form>
 
-      </div>    
+    </div>    
 
-    <div class="col-md-1 mt-2">
+    <div class="col-md-1 mt-1">
     
     </div>
 

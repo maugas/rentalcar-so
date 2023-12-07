@@ -1,10 +1,10 @@
 <div class="container-fluid">
     <div class="row">
-        <div class="col-md-4 mt-2">
+        <div class="col-md-4 mt-5">
+          <div class="card border-0 shadow p-3">
           <h5 class="t">{{ carAction }}</h5>
            <!--  Beginning of card -->
           <form [formGroup]="carForm" (ngSubmit)="manageCar()">
-            <div class="card border-0 shadow p-3">
   
                    <div class="mt-2">
                         <input type="text" class="form-control" formControlName="registration" placeholder="Registration" name="registration" ngModel>
@@ -65,12 +65,18 @@
                     <td class="col-md-1"> <button type="button" class="btn btn-outline-secondary mt-4" routerLink="/cars" (click)=" saveCar()" >Save</button></td>
                      
                    </tr>
-                </div>
            </form>
+          </div>
+
             <!-- End of card -->
         </div>
-        <div class="col-md-8 mt-2">
-            <h5 class="t">Car list</h5>
+
+        <div class="col-md-8 mt-5 card border-0 shadow p-3">
+          <h5 class="t">Car list</h5>
+          <!--td><a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()">Edit</a> | 
+            <a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()"> Delete</a> </td-->
+
+
             <div class="card p-3 shadow">
                 <div class="card-body">
                     <table class="table table-sm table-hover">

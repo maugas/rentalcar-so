@@ -19,6 +19,9 @@ import { RentsearchComponent } from './rentsearch/rentsearch.component';
 import { RentavailableComponent } from './rentavailable/rentavailable.component';
 import { RentbookingComponent } from './rentbooking/rentbooking.component';
 import { CarService } from './services/car.service';
+import { RentconfirmComponent } from './rentconfirm/rentconfirm.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +31,9 @@ import { CarService } from './services/car.service';
     RentsearchComponent,
     RentavailableComponent,
     RentbookingComponent,
+    RentconfirmComponent,
+    AboutComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
