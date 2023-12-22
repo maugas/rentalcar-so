@@ -1,6 +1,51 @@
-export class Booking{
+export class BookingRef{
+    bookingId: string ='';
     name: string = '';
-    refrence: string ='';
+}
+
+export class Rental {
+    rentalId?: string ='';
+    location: string ='';
+    bookingId: string ='';
+    pickupDate: string ='';
+    pickupTime: string ='';
+    dropoffDate: string ='';
+    dropoffTime: string ='';
+    status: RentalStatus = RentalStatus.Rented;
+    carType: string = "";
+    registration: string ='';
+    userEmail : string ='';
+    userName : string ='';
+    nname: string = ';'
+    userTelephone : string =''; 
+    userWork: string = '';
+    coName: string ='';
+    coTelephone: string =''; 
+    coWork: string = '';
+    carPrice : number =0;
+    totalCharge: number = 0;
+    discount : number = 0;
+    tax:number =0;
+    otherCharge: number =0;
+    comment: string ='';
+   }
+
+
+export class Booking{
+    bookingId: string ='';
+    location: string = '';
+    name: string = '';
+    email: string ='';
+    telefone : string ='';
+    carType: string ='';
+    pickupDate: string ='';
+    pickupTime: string ='';
+    dropoffDate: string ='';
+    dropoffTime: string ='';
+    carPrice : number = 0;
+    totalCharge: number= 0;
+    bookedDate: string='';
+    status: RentalStatus = RentalStatus.Booked;
 }
 
 export class Car {
@@ -27,7 +72,7 @@ export class Car {
     telephone: string;
    }
 
-   export interface Rental {
+   export interface _Rental {
     id?: number;
     location: string;
     bookingId: string;
@@ -48,7 +93,7 @@ export class Car {
     discount : number;
     tax:number;
     otherCharge: number;
-    bookedDate: string;
+    rentedDate: string;
    }
 
    export interface Make {

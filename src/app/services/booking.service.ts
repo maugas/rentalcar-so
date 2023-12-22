@@ -1,25 +1,30 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { Booking } from '../models/car.model';
+import { BookingRef, Rental } from '../models/car.model';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class BookingService {
-  myBooking : Booking = {
-    name : '',
-    refrence : ''
-  };
+  myBooking : BookingRef = {name : '',  bookingId : ''};
+  bookingId = "";
+
   constructor() { }
 
-  private booking = new BehaviorSubject<Booking>(this.myBooking);
+  private booking = new BehaviorSubject<BookingRef>(this.myBooking);
   currentBooking = this.booking.asObservable();
-  
-  updateBooking(newBooking: any){
-    this.booking.next(newBooking); 
-    console.log("from service: " + newBooking.name);
-    console.log("from service currentBooking: " + this.currentBooking);
 
+  private rental = new BehaviorSubject<string>(this.bookingId);
+  currentRental = this.rental.asObservable();
+
+  
+  updateBooking(newBooking: any){ 
+    this.booking.next(newBooking); 
+  }
+
+  updateRental(newRental: string) {
+    this.rental.next(newRental); 
   }
 
 }

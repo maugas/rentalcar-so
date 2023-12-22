@@ -7,8 +7,9 @@ import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin.component';
 import { UsersComponent } from './users/users.component';
 import { RentalsComponent } from './rentals/rentals.component';
-import { ModelsComponent } from './models/models.component';
 import { LocationsComponent } from './locations/locations.component';
+import { LoginComponent } from './login/login.component';
+import { BookingComponent } from './booking/booking.component';
 
 
 @NgModule({
@@ -17,8 +18,9 @@ import { LocationsComponent } from './locations/locations.component';
     AdminComponent,
     UsersComponent,
     RentalsComponent,
-    ModelsComponent,
-    LocationsComponent
+    LocationsComponent,
+    LoginComponent,
+    BookingComponent
   ],
   imports: [
     CommonModule,

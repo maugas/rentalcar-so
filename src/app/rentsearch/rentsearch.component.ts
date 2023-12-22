@@ -3,6 +3,7 @@ import { CarService } from '../services/car.service';
 import { Observable, map } from 'rxjs';
 import { formatDate } from '@angular/common';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-rentsearch',
@@ -14,39 +15,66 @@ export class RentsearchComponent implements OnInit {
   currentDate = "";
   minReturnDate = "";
   maxDate = "";
+ 
+  submitted = false;
 
   carsData! : Observable<any>;
 
-  constructor(private fb: FormBuilder, private carService: CarService) { }
+  constructor(private fb: FormBuilder, private carService: CarService, private router: Router) { }
 
   searchForm = this.fb.group({
     pickupLoc: new FormControl('', [Validators.required]), 
-    pickupDate: [''], dropoffDate: [''], pickupTime: ['10:30'], 
+    pickupDate: ['', [Validators.required]], dropoffDate: ['', [Validators.required]], pickupTime: ['10:30'], 
     dropoffTime: ['10:30'], dropoffLoc: ['']
   });
 
   ngOnInit(): void {
     this.gatAllLocations();
     this.currentDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');
-    console.log(this.currentDate)
+   // console.log(this.currentDate)
+
+    //this.searchFormControl.pickupDate.setValue(this.currentDate)
 
     var sdate = new Date();
     sdate.setDate(sdate.getDate() + 1);
     console.log("sdate :" + sdate);
     var minReturnDate = formatDate(new Date(sdate), "yyyy-MM-dd", 'en')
     console.log("minReturnDate :" + minReturnDate);
-    
-    localStorage.setItem("searchForm", "")
   }
+
+  get searchFormControl() {
+    return this.searchForm.controls;
+  }
+
+  onChange(){
+    const {pickupLoc, pickupDate, pickupTime, dropoffDate, dropoffTime } = this.searchForm.value;
+    let sDate = String(pickupDate).split('-');
+    var newDate = new Date(Number(sDate[0]), Number(sDate[1])-1, Number(sDate[2]));
+    this.minReturnDate = formatDate(new Date(this.addDays(newDate, 1)), "yyyy-MM-dd", 'en');
+  }
+
+  addDays(date: Date, days: number): Date {
+    console.log("date: " +date)
+    date.setDate(date.getDate() + days);
+    return date;
+}
 
   gatAllLocations(){
     this.locations = this.carService.getAllLocations();
   }
 
   getAvailableCars(){
+    this.submitted = true;
+    if (!this.searchForm.valid) {
+      return
+    }
     const {pickupLoc, pickupDate, pickupTime, dropoffDate, dropoffTime } = this.searchForm.value;
     var days =this.carService.calculateDiffDates(pickupDate, dropoffDate);
+
     localStorage.setItem("searchForm", pickupLoc+"|"+pickupDate+"|"+ pickupTime+"|"+ dropoffDate+"|"+ dropoffTime + "|" + days);
+
+    this.router.navigate(['/available'])
+
   }
     
   manageSearch(){}

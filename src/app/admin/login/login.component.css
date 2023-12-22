@@ -1,0 +1,21 @@
+h5{
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+
+.card{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: white;
+
+}
+
+.container-fluid{
+    padding: 10px;
+    background:  url(../../../assets/background.jpg);
+    background-size:cover;
+    background-position:bottom;
+    height: 80vh;
+
+}

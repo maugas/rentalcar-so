@@ -22,9 +22,13 @@ export class RentbookingComponent implements OnInit {
   nDays = 0;
   cPrice = 0;
   userData = new User();
+  error = "";
+  userExists : any;
+  submitted = false;
+  isDisplayed = false;
 
   constructor(private fb: FormBuilder, private carService : CarService, 
-    private bookingService: BookingService , private router:Router) { }
+    private bookingService: BookingService, private router:Router) { }
 
   bookingForm = this.fb.group({
     fname: new FormControl('', [Validators.required, Validators.minLength(3)]), 
@@ -58,87 +62,63 @@ export class RentbookingComponent implements OnInit {
     this.bookingService.currentBooking.subscribe(data => console.log(data))
   }
 
+get bookingFormControl() {  return this.bookingForm.controls;}
 
-  fname(){
-   return this.bookingForm.get('fname')
- }
+manageSearch(){}
 
- lname(){
-  return this.bookingForm.get('lname')
-}
+async booking(){
+  this.isDisplayed = true;
+  this.submitted = true;
+  if (!this.bookingForm.valid) { return }
 
-  manageSearch(){}
+  const {fname, lname, address, email, telephone} = this.bookingForm.value;
 
-  async booking(){
+  let result = await this.addUser()
+  if (!result){
+       if( this.userExists.fname != fname || this.userExists.lname != lname ) {
+         this.error = "This email has differnt information"
+       }
+     }
 
-    await this.addUser();
-    let carRental : Rental = {
+    let carBooking : Booking = {
       location: this.location,
       bookingId : this.carService.getBookingRefId(5),
+      carType : this.cCar.type,
       pickupDate : this.pickupDate,
       pickupTime : this.pickupTime,
       dropoffDate : this.dropoffDate,
       dropoffTime : this.dropoffTime,
       status: RentalStatus.Booked,
-      carId: this.cCar.id + "",
-      registration: this.cCar.registration,
-      userId : this.userData.id + "",
-      userName : this.userData.fname + " " + this.userData.lname,
-      userPhone : this.userData.telephone + "",
-      userAddress : this.userData.address + "",
-      userEmail : this.userData.email + "",
+      name : fname + " " + lname,
+      telefone : telephone + "",
+      email : email + "",
       carPrice : this.cPrice,
       totalCharge: this.cPrice * this.nDays,
-      discount : 0,
-      tax:0,
-      otherCharge: 0,
       bookedDate: formatDate( new Date().toISOString(), 'dd/MM/yyyy hh:mm', 'en-US', 'GMT+3'),
     };    
 
-  await this.carService.addCarRental(carRental)
-    .then ((data) => {
-      // update the car make it booked
-      console.log("Updating the car id " + this.cCar.id + " status: " + CarStatus.booked )
-      console.log("Booking id: " + carRental.bookingId);
-      this.carService.updateCarStatus(this.cCar.id+'', CarStatus.booked);
-      
-      localStorage.clear();
-      let booking = new Booking ();
-        booking.name = this.userData.fname + " " + this.userData.lname;
-        booking.refrence = carRental.bookingId;
-
+await this.carService.addCarBooking(carBooking)
+      .then ((data) => {
+        localStorage.clear();
+        let booking = new Booking ();
+        booking.name = fname + " " + lname;
+        booking.bookingId = carBooking.bookingId;
         this.bookingService.updateBooking(booking);
-
-      localStorage.setItem("userName", this.userData.fname + " " + this.userData.lname );
-      localStorage.setItem("userEmail", this.userData.email)
-      localStorage.setItem("bookingRefId", carRental.bookingId)
-      
-      this.router.navigate(['/confirm'])
-
-    } )
-   
-
+        this.isDisplayed = false
+        this.router.navigate(['/confirm'])
+      })
   }
 
-async addUser(){
-  const {fname, lname, email, telephone} = this.bookingForm.value;
-
-  this.userData = {
-    fname: fname +"",
-    mname:  "",
-    lname: lname + "",
-    address: "",
-    email: email + "",
-    telephone: telephone + "",
-    coSigner: "",
-   };
-
-let userId = "";
-
-await this.carService.addUser(this.userData)
-   .then( data => userId = data.id);
-  this.userData.id = userId;
-
+async addUser(): Promise<boolean> {
+  const {fname, lname, address, email, telephone} = this.bookingForm.value;
+      let user = await this.carService.getUserById(email)
+      if (user.exists()) 
+        {
+        this.userExists = user.data();
+          return false
+        } 
+      else {  return true      }
 }
+
 
 }

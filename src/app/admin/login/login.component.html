@@ -1,1 +1,55 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <div class="card mt-3 ">
+      <h5 class="t"> Login</h5>
+        <form [formGroup]="loginForm"  (ngSubmit)="login()">
+          <div class="card ">
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 my-2">
+              <input formControlName="email"  name="email" placeholder="Email address" class="form-control" (click)="authError=''">
+              <span *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="text-danger"> <small>Email is required</small></span>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+    
+          <div class="row">
+           <div class="col-md-2"></div>
+            <div class="col-md-8 my-2">
+              <input formControlName="password" name="password" type="password" placeholder="Password" class="form-control" (click)="authError=''">
+              <span *ngIf="password?.invalid && (password?.dirty || password?.touched)" class="text-danger"> <small>Password is required</small></span>
+              <span *ngIf="authError != '' " class="text-danger"> <small>Email or password is incorrect</small></span>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+              <button type="submit" class="w-100 btn btn-lg btn-outline-secondary my-4" (click)="login()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0z"/>
+                  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                </svg> 
+                &nbsp;  Login</button>
+            </div>
+            <div class="col-md-2"></div>
+          </div>
+     
+          <!-- <div class="row">
+              <div class="col-md-2"></div>
+              <div class="col-md-8 p-2" >  
+                  <span><a href="/register">Click here to register</a></span> 
+              </div>
+              <div class="col-md-2"></div>
+          </div> -->
+  
+          </div>
+        </form>
+      </div>
+     <div class="col mt-5">
+      <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">We strive our client’s safety, comfort, and satisfaction </h4>
+        <h4 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">  </h4>
+     </div>
+    </div>
+  
+  

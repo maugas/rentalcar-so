@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { Observable, filter } from 'rxjs';
+import { Observable } from 'rxjs';
 import { CarStatus, Type , RentalStatus } from 'src/app/models/car.model';
 import { CarService } from 'src/app/services/car.service';
-import { AngularFirestore } from '@angular/fire/compat/firestore';
-
 
 @Component({
   selector: 'app-cars',
@@ -113,10 +111,6 @@ carForm = this.fb.group({
     this.makes = this.carService.getAllMakes();
   }
   
-  // getModelsByMake(make: string){
-  //   this.models = this.carService.getModelesByMake(make); 
-  // }
-
   getModelsByMake(make: string){
   //   this.models = this.afs.collection('models', ref => ref.where('make', '==', make))
   //  .valueChanges();

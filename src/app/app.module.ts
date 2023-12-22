@@ -9,11 +9,9 @@ import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { NgxPaginationModule } from 'ngx-pagination';
 
-
 import { environment } from 'src/environments/environment';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component';
-import { TestpageComponent } from './testpage/testpage.component';
 import { AdminModule } from './admin/admin.module';
 import { RentsearchComponent } from './rentsearch/rentsearch.component';
 import { RentavailableComponent } from './rentavailable/rentavailable.component';
@@ -27,7 +25,6 @@ import { ContactComponent } from './contact/contact.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    TestpageComponent,
     RentsearchComponent,
     RentavailableComponent,
     RentbookingComponent,
@@ -42,7 +39,7 @@ import { ContactComponent } from './contact/contact.component';
     ReactiveFormsModule,
     NgxPaginationModule,
     AdminModule,
-    provideFirebaseApp(() => initializeApp( environment.firebaseConfig )),
+    provideFirebaseApp(() => initializeApp( environment.firebase )),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
   ],

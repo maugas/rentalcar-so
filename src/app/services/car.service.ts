@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Firestore, collection, addDoc, doc, collectionData, 
-  updateDoc, deleteDoc, getDoc, query, where, getDocs, and } from '@angular/fire/firestore';
+  updateDoc, deleteDoc, getDoc, query, where, getDocs, and, setDoc } from '@angular/fire/firestore';
 import { Observable, filter, map } from 'rxjs';
+import { Rental, RentalStatus } from '../models/car.model';
 
 @Injectable()
 export class CarService {
@@ -66,7 +67,7 @@ export class CarService {
     .then(()=> { console.log("Car Data is updated!")})
     .catch(err=> {console.log(err)})
    }
-
+   
    updateCarStatus(id:string, status:any){
     const carData = {  status:status }
     const carInstance = doc(this.fs, "cars", id);
@@ -132,12 +133,22 @@ addCarRental(rental:any){
     .catch(err => console.log(err))
  }
 
+
+ addCarBooking(booking:any){
+  console.log(booking);
+  const carCollection = collection(this.fs, "bookings");
+  return addDoc(carCollection, booking )
+    .then( (docRef) => console.log("Booking Data id:" + docRef.id))
+    .catch(err => console.log(err))
+ }
+
+
  getAllRentals(){
   const carCollection = collection(this.fs, "rentals");
   return this.carRentals = collectionData(carCollection, {idField : 'id'});
  }
 
- addUser(user:any){
+ addUser_old(user:any){
   console.log(user);
   this.userId = "000-000";
   const userCollection = collection(this.fs, "users");
@@ -156,9 +167,15 @@ addCarRental(rental:any){
   return result;
 }
 
+async addLocation(f:any){
+  const {location } = f.value;
+  console.log(location)
+  const db = this.fs;
+  await setDoc(doc(db, "locations", location), f.value)
+}
 
-addLocationData(f:any){
-  const carCollection = collection(this.fs, "locations");
+addLocationData_old(f:any){
+  const carCollection = collection(this.fs, "locations")
   return addDoc(carCollection, f.value )
     .then( () => console.log("Saved Location data"))
     .catch(err => console.log(err))
@@ -186,7 +203,14 @@ addLocationData(f:any){
   return this.usersData = collectionData(carCollection, {idField : 'id'});
  }
 
- addUserData(f:any){
+
+ async addUser(f:any){
+  const {email } = f.value;
+  const db = this.fs;
+  await setDoc(doc(db, "users", email), f.value)
+}
+
+ addUserData_old(f:any){
   const userCollection = collection(this.fs, "users");
   return addDoc(userCollection, f.value )
     .then( () => console.log("Saved users data"))
@@ -199,6 +223,7 @@ addLocationData(f:any){
    .then(()=> { console.log("user " + id + " is deleted!")})
    .catch(err=> {console.log(err)})
  }
+
  updateUser(id:string, f:any){
   const {fname, mname, lname, address, telephone, email, cosigner  } = f.value;
   const locData = { fname:fname, mname:mname+'', lname:lname+'', address:address+'', email:email+'', cosigner:cosigner+''
@@ -210,9 +235,8 @@ addLocationData(f:any){
  }
 
  getBookedReservations(loc:string){
-  //where("location", "==", loc),
   const db = this.fs;
-  const q = query(collection(db, "rentals"), and ( where("status", "==", "Booked") ));
+  const q = query(collection(db, "bookings"), and ( where("location", "==", loc), where("status", "==", "Booked") ));
   
   const dict: Record<string, any> = [];
   const querySnapshot =  getDocs(q);
@@ -223,6 +247,79 @@ addLocationData(f:any){
    } )
   return dict;
 }
+
+async getUserById(id:any){
+  return getDoc(doc(this.fs, "users", id));
+}
+
+getLocationById(id:string){
+  return getDoc(doc(this.fs, "locations", id));
+ }
+
+
+
+ deleteReservation(id:string){
+  const locInstance = doc(this.fs, "bookings", id);
+  deleteDoc(locInstance )
+   .then(()=> { console.log("bookings " + id + " is deleted!")})
+   .catch(err=> {console.log(err)})
+ }
+
+ updateRentalStatus(id:string, status:RentalStatus){
+  const resData = { status: status }
+  const locInstance = doc(this.fs, "bookings", id);
+  updateDoc(locInstance, resData)
+  .then(()=> { console.log("Booking data is updated!")})
+  .catch(err=> {console.log(err)})
+ }
+
+ getReservationsByRefId(refId:string){
+  const db = this.fs;
+  const q = query(collection(db, "bookings"), where("bookingId", "==", refId) );
+   let array = [];
+  const dict: Record<string, any> = [];
+  const querySnapshot =  getDocs(q);
+   querySnapshot.then ( (data) => {
+    data.forEach((doc) => {
+         dict[doc.id] = doc.data();
+    });
+   } )
+  return dict;
+ }
+
+ getBookedReservationByEmail(email:string){
+  const db = this.fs;
+  const q = query(collection(db, "bookings"), where("email", "==", email) );
+  const dict: Record<string, any> = [];
+  const querySnapshot =  getDocs(q);
+   querySnapshot.then ( (data) => {
+    data.forEach((doc) => {
+         dict[doc.id] = doc.data();
+         console.log(doc.id + '=> ' + JSON.stringify(doc.data()))
+    });
+   } )
+  return dict;
+}
+
+getBookingById(id:string){
+  return getDoc(doc(this.fs, "bookings", id));
+ }
+
+
+saveRental(rental:any){
+  const carCollection = collection(this.fs, "rentals");
+  return addDoc(carCollection, rental );
+//     .then( () => console.log("Saved rental data"))
+//     .catch(err => console.log(err))
+  }
+
+updateRental(id:string, rentData:any){
+  const rentInstance = doc(this.fs, "rentals", id);
+    updateDoc(rentInstance, rentData)
+    .then(()=> { console.log("Rentals Data is updated!")})
+    .catch(err=> {console.log(err)})
+}
+
 
 
 }

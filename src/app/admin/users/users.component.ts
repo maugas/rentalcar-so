@@ -73,7 +73,7 @@ export class UsersComponent implements OnInit {
   }
 
   addUser(f:any) {
-    this.carService.addUserData(f);
+    this.carService.addUser(f);
     console.log(f.value);
   }
 

@@ -1,12 +1,12 @@
 <div class="container-fluid">
   <div class="row">
 
-    <div class="col-md-1 mt-5">
+    <div class="col-md-1 mt-1">
     </div>
 
-    <div class="col-md-9 shadow p-2 mt-5">
+    <div class="col-md-8 mt-1">
       <div class="row">
-        <div class="shadow p-1">
+        <div>
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
               <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -15,23 +15,23 @@
               </div>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img width="80%" height="370"  src="../../assets/1.jpg" class="d-block w-100" alt="...">
+                  <img width="60%" height="200"  src="../../assets/background.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
-                    <h1>Global Online Car Rental</h1>
-                    <h6>Rent cars through our online platform, and rest assured that we'll take care your reservations.</h6>
+                    <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Car Rental in Mogadishu</h2>
+                    <h6>Rent cars through our online platform, and rest assured that we'll take care of your reservation.</h6>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img width="70%" height="370"  src="../../assets/2.jpg" class="d-block w-100" alt="...">
+                  <img width="60%" height="200"  src="../../assets/background.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
-                    <h1>Best Car Rental Service!</h1>
-                    <h6>Best rental prices with complete transparency, no concealed additional fees, as all charges are inclusive!</h6>
+                    <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Best Car Rental Service!</h2>
+                    <h6>Best rental prices with complete transparency, no concealed additional fees, as all charges are inclusive!, and payment is made at the time of pick up. </h6>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img width="60%" height="370"  src="../../assets/3.jpg" class="d-block w-100" alt="...">
+                  <img width="60%" height="200"  src="../../assets/background.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
-                    <h1>Fast and Effective Service</h1>
+                    <h2 style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Fast and Effective Service</h2>
                     <h6>Choose the car of your choice for an unforgettable journey. Click it, and we'll prepare it for your adventure.</h6>
                   </div>
                 </div>
@@ -54,12 +54,20 @@
 
       <div class="row">
           <div class="col mt-1">
-            <select class="form-select form-select-sm" aria-label=".form-select-sm"  formControlName="pickupLoc" #pickupLoc>
-              <option selected>Pick-up</option>
+            <div class="input-group">
+            <label class="input-group-text" for="pickupLoc"><i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"/>
+              </svg>
+            </i></label>
+            <select class="form-select form-select-sm" aria-label=".form-select-sm" id="pickupLoc" formControlName="pickupLoc" #pickupLoc>
+              <option selected>Pick-up location</option>
               <option *ngFor="let loc of locations | async">
                 {{loc.location}}
               </option>  
             </select>
+            </div>
+            <span *ngIf="searchFormControl.pickupLoc?.invalid && (searchFormControl.pickupLoc?.dirty || searchFormControl.pickupLoc?.touched || submitted)" class="text-danger"> <small>Pick-up location is required</small></span>
           </div>
 
           <div class="col mt-1">
@@ -70,10 +78,28 @@
     
         <div class="row">
           <td class="col  mt-2">
-            <input type="date"  [min]="currentDate" class="form-control" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate">
+            <!-- <div class="input-group">
+              <label class="input-group-text" for="pickupDate"><i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-day-fill" viewBox="0 0 16 16">
+                  <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16zm-4.785-6.145a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43c0 .238.192.425.43.425zm.336.563h-.672v4.105h.672zm-6.867 4.105v-2.3h2.261v-.61H4.684V7.801h2.464v-.61H4v5.332zm3.296 0h.676V9.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105z"/>
+                </svg>
+               </i></label> -->
+
+            <input type="date" [min]="currentDate" class="form-control" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate" (change)="onChange()">
+            <span *ngIf="searchFormControl.pickupDate?.invalid && (searchFormControl.pickupDate?.dirty || searchFormControl.pickupDate?.touched || submitted)" class="text-danger"> <small>Pick-up date is required</small></span>
+            <!--/div-->
           </td>
           <td class="col mt-2">
-            <input type="date" min="2023-11-21" class="form-control" placeholder="Drop-off date" aria-label="Drop-off date" formControlName="dropoffDate">
+            <!-- <div class="input-group">
+              <label class="input-group-text" for="dropoffDate"><i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-day-fill" viewBox="0 0 16 16">
+                  <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5h16zm-4.785-6.145a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43c0 .238.192.425.43.425zm.336.563h-.672v4.105h.672zm-6.867 4.105v-2.3h2.261v-.61H4.684V7.801h2.464v-.61H4v5.332zm3.296 0h.676V9.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105z"/>
+                </svg>
+               </i></label> -->
+
+            <input type="date"  [min]="minReturnDate"  [max]="" class="form-control" placeholder="Drop-off date" aria-label="Drop-off date" formControlName="dropoffDate">
+            <span *ngIf="searchFormControl.dropoffDate?.invalid && (searchFormControl.dropoffDate?.dirty || searchFormControl.dropoffDate?.touched || submitted)" class="text-danger"> <small>Drop-off date is required</small></span>
+            <!--/div-->
           </td>
           <td class="col  mt-2">
             <input type="time" value="10:30" class="form-control" placeholder="Pick-up time" aria-label="Pick-up" formControlName="pickupTime">
@@ -84,10 +110,15 @@
         </div>
 
       <div class="row">
-        <td class="col-md-2"> 
-          <button type="button" class="btn btn-outline-secondary mt-3" routerLink="/available" (click)="getAvailableCars()">Search</button>
+        <td class="col-md-3 mt-3"> 
+          <button type="button" class="w-100 btn btn-primary " (click)="getAvailableCars()"> 
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>
+            &nbsp;    Search </button>
         </td>
       </div>
+      <br>
     </form>
 
     </div>    

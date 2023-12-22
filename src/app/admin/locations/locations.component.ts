@@ -66,7 +66,7 @@ export class LocationsComponent implements OnInit {
   }
 
   addLoc(f:any) {
-    this.carService.addLocationData(f);
+    this.carService.addLocation(f);
     console.log(f.value);
   }
 
