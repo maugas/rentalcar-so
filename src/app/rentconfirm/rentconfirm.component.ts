@@ -11,6 +11,7 @@ export class RentconfirmComponent implements OnInit {
   booking! : BookingRef;
   bookingNumber ="";
   userName = "";
+  
   constructor(private bookingService: BookingService) { }
 
   ngOnInit(): void {

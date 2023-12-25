@@ -13,8 +13,6 @@ export class UsersComponent implements OnInit {
   public usersData! : Observable<any>;
   public userList : any = [];
   userId:string ="";
-
-
   public totalPages: number = 0;
   public page: number = 1;
 
@@ -46,7 +44,6 @@ export class UsersComponent implements OnInit {
     {
        this.addUser(this.  usersForm);
     }
-   
     this.clearForm();
   }
 
@@ -63,13 +60,10 @@ export class UsersComponent implements OnInit {
 
   getUsers(){
     this.usersData = this.carService.getUsers();
-
     this.usersData.subscribe((data:any)=> {
       this.totalPages = data.length;
-      console.log("Total Pages : " + this.totalPages)
       this.userList = data;
     })
-
   }
 
   addUser(f:any) {

@@ -5,20 +5,33 @@
       </div>
 
       <div class="col-md-8  card mt-1">
-      <form [formGroup]="rentalForm" (ngSubmit)="manageCar()">
+      <form [formGroup]="rentalForm">
           <div class="row mt-3">
-           <div class="col-md-6"> <h5>Rentals</h5> </div>
+           <div class="col-md-5"> <h5>Rentals</h5> </div>
            <div class="col-md-3"><input class="form-control me-2" name="search" type="text" placeholder="Booking number or email"></div>  
-           <div class="col-md-2"><button class="btn btn-outline-secondary" (click)="getReservationsByRefId()">
+           <div class="col-md-2">
+            <button class="btn btn-outline-secondary" (click)="getReservationsByRefId()">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                 </svg>
-              Search</button></div> 
+                Search
+            </button>
+            </div> 
+            <div class="col-md-2">
+              <button class="btn btn-outline-secondary" routerLink="/admin/reports" (click)="reports()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+                  <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+                </svg>
+                    Rent Reports
+              </button>
+            </div> 
         </div>
 
           <div class="card mt-2">
               <div class="card-body">
-                  <table class="table table-sm table-hover">
+                  <!-- <table class="table table-sm table-hover"> -->
+                    <div class="table-responsive-md">
+                      <table class="table">
                       <thead>
                         <tr>
                           <th scope="col">Rent-No</th>
@@ -32,14 +45,14 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr *ngFor="let rental of querySnapshotList | async 
+                        <tr *ngFor="let rental of querySnapshotList | keyvalue 
                         paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
-                          <td>{{ rental.rentalId}}</td>
-                          <td>{{rental.registration}}</td>
-                          <td>{{ rental.pickupDate}}</td>
-                          <td>{{rental.dropoffDate}}</td>
-                          <td>{{rental.userName}}</td>
-                          <td>{{rental.userTelephone}}</td>
+                          <td>{{ rental.value['rentalId']}}</td>
+                          <td>{{rental.value['registration']}}</td>
+                          <td>{{ rental.value['pickupDate']}}</td>
+                          <td>{{rental.value['dropoffDate']}}</td>
+                          <td>{{rental.value['userName']}}</td>
+                          <td>{{rental.value['userTelephone']}}</td>
 
                           <td>
                             <!-- <a  style="cursor:pointer"  (click)="editLoc(rental)">
@@ -52,7 +65,7 @@
                               <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
                             </svg>
                               </a> | -->
-                              <a  style="cursor:pointer"  (click)="editRental(rental.id, rental)"> 
+                              <a  style="cursor:pointer" data-toggle="tooltip" data-placement="top" title="Edit Rental" (click)="editRental(rental.key, rental)"> 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                   <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                   <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
@@ -63,7 +76,8 @@
 
                         </tr>
                       </tbody>
-                    </table>
+                      </table>
+                     </div> 
                     <div class="center"><pagination-controls (pageChange)="page = $event"></pagination-controls></div> 
               </div>
           </div>
@@ -71,7 +85,6 @@
         <br>
       </div>
   </div>
-
 
 <!--  BEGIN -->
 <div *ngIf="!showRentalList" class="row">
@@ -88,12 +101,12 @@
   <span>{{coName}}   {{coTelephone}}</span>
   <hr>
  <!--  Beginning of card -->
-<form [formGroup]="rentalForm" (ngSubmit)="manageCar()">
+<form [formGroup]="rentalForm">
           <div class="mt-2">
             <td class="col-md-2">
               <div class="input-group">
                 <span class="input-group-text">Car type &nbsp;</span>     
-              <select class="form-select form-select-sm" aria-label=".form-select-sm"  formControlName="type" style="font-weight: bold;" #type (change)="onChangeType(type.value)">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm"  formControlName="type" style="font-weight: bold;" #type>
                 <option selected>Type</option>
                 <option value="Compact">Compact</option>
                 <option value="Full-Size">Full-Size</option>
@@ -116,7 +129,7 @@
             <td class="col-md-2">       
               <div class="input-group">
                 <span class="input-group-text">Rent date</span>       
-              <input type="date"   class="form-control" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate"  (change)="onChange()">
+              <input type="date"   class="form-control" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate">
               <!-- <span *ngIf="searchFormControl.pickupDate?.invalid && (searchFormControl.pickupDate?.dirty || searchFormControl.pickupDate?.touched || submitted)" class="text-danger"> <small>Pick-up date is required</small></span> -->
             </div>  
             </td>    
@@ -156,7 +169,7 @@
             <td class="col-md-2">
               <div class="input-group">
                 <span class="input-group-text">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>     
-              <select class="form-select form-select-sm" aria-label=".form-select-sm" formControlName="status" #status (change)="onChangeType(status.value)">
+              <select class="form-select form-select-sm" aria-label=".form-select-sm" formControlName="status" #status>
                 <option selected>Status</option>
                 <option *ngFor="let cs of rentStatus | keyvalue" [value]="cs.value">
                   {{cs.value}}    
@@ -175,17 +188,15 @@
             </td>
           </div>
 
-
-
         <div class="mt-1">
-          <td class="col-md-2"> <button type="button" class="btn btn-outline-secondary mt-2"  (click)="cancelRental()" >
+          <td class="col-md-2"> <button type="button" class="btn btn-outline-secondary mt-2" data-toggle="tooltip" data-placement="top" title="Go Back"  (click)="cancelRental()" >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
               <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
             </svg> 
             &nbsp; Back</button>
           </td>
                     
-          <td class="col-md-2"> <button type="button" class="btn btn-outline-secondary mt-2"  (click)="updateRental()" >
+          <td class="col-md-2"> <button type="button" class="btn btn-outline-secondary mt-2" data-toggle="tooltip" data-placement="top" title="Update Rental" (click)="updateRental()" >
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-save-fill" viewBox="0 0 16 16">
               <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293z"/>
             </svg>

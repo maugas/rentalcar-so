@@ -1,0 +1,40 @@
+<div class="container-fluid bg-light">
+    <div class="card shadow p-3 py-6 mt-3">
+      <div class="row">
+       <div class="col-md-11">
+           <h5 class="t">Report List</h5>
+               <table class="table table-bordered table-sm table-hover">
+                   <thead>
+                       <tr>
+                       <!-- <th class="col-md-3">Date</th> -->
+                       <th class="col-md-2">Rent-No</th>
+                       <th class="col-md-2">Car</th>
+                       <th class="col-md-2">Start-date</th>
+                       <th class="col-md-2">End-date</th>
+                       <th class="col-md-2">Name</th>
+                       <th class="col-md-2">Total-charge</th>
+
+
+                       </tr>
+                   </thead>
+                    
+                   <tbody>
+                       <tr *ngFor="let item of querySnapshotList | keyvalue
+                       paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }"> 
+                           <td class="col-md-2"> {{item.value['rentalId']}} </td>
+                           <td class="col-md-2"><strong>  {{item.value['registration']}}</strong></td>
+                           <td class="col-md-2"> {{item.value['pickupDate']}} </td>
+                           <td class="col-md-2"> {{item.value['dropoffDate']}}</td>
+                           <td class="col-md-2"> {{item.value['userName']}}</td>
+                           <td class="col-md-2"><strong>{{item.value['totalCharge'] | currency}}</strong></td>
+
+                           <td > <a href="#" style="cursor:pointer" routerLink="/admin/report/{{item.key}}">Show</a></td>
+                       </tr>
+                   </tbody>
+               </table>
+               
+               <div class="d-flex justify-content-center mt-2"><pagination-controls (pageChange)="page = $event"></pagination-controls></div> 
+        </div>
+       </div>
+   </div>
+   

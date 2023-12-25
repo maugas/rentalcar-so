@@ -32,7 +32,7 @@ export class RentavailableComponent implements OnInit {
   }
 
   getAvailableCars(){
-     this.querySnapshotList = this.carService.getAvailableCars("21/11/2023");
+     this.querySnapshotList = this.carService.getAvailableCars("");
   }
   
   carBooking(key: string, car:Car){

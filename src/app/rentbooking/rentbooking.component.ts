@@ -59,7 +59,7 @@ export class RentbookingComponent implements OnInit {
     this.cCar.price = carValues[6];
     this.cPrice = Number(this.cCar.price);
 
-    this.bookingService.currentBooking.subscribe(data => console.log(data))
+   //this.bookingService.currentBooking.subscribe(data => console.log(data))
   }
 
 get bookingFormControl() {  return this.bookingForm.controls;}
@@ -81,19 +81,11 @@ async booking(){
      }
 
     let carBooking : Booking = {
-      location: this.location,
-      bookingId : this.carService.getBookingRefId(5),
-      carType : this.cCar.type,
-      pickupDate : this.pickupDate,
-      pickupTime : this.pickupTime,
-      dropoffDate : this.dropoffDate,
-      dropoffTime : this.dropoffTime,
-      status: RentalStatus.Booked,
-      name : fname + " " + lname,
-      telefone : telephone + "",
-      email : email + "",
-      carPrice : this.cPrice,
-      totalCharge: this.cPrice * this.nDays,
+      location: this.location, bookingId : this.carService.getBookingRefId(5),
+      carType : this.cCar.type, pickupDate : this.pickupDate, pickupTime : this.pickupTime,
+      dropoffDate : this.dropoffDate, dropoffTime : this.dropoffTime, status: RentalStatus.Booked,
+      name : fname + " " + lname, telefone : telephone + "", email : email + "",
+      carPrice : this.cPrice, totalCharge: this.cPrice * this.nDays,
       bookedDate: formatDate( new Date().toISOString(), 'dd/MM/yyyy hh:mm', 'en-US', 'GMT+3'),
     };    
 
@@ -117,8 +109,7 @@ async addUser(): Promise<boolean> {
         this.userExists = user.data();
           return false
         } 
-      else {  return true      }
+      else {  return true  }
 }
-
 
 }

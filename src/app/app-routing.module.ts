@@ -14,6 +14,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AuthguardService } from './services/authguard.service';
 import { BookingComponent } from './admin/booking/booking.component';
+import { ReportListComponent } from './admin/report-list/report-list.component';
+import { ReportComponent } from './admin/report/report.component';
 
 const routes: Routes = [
   {path:"admin", component:AdminComponent, children: [
@@ -22,10 +24,12 @@ const routes: Routes = [
     {path:"rentals", component:RentalsComponent, canActivate : [AuthguardService]},
     {path:"locations", component:LocationsComponent, canActivate : [AuthguardService]},
     {path:"users", component:UsersComponent, canActivate : [AuthguardService]},
+    {path:"reports", component:ReportListComponent, canActivate : [AuthguardService]},
+    {path:"report", component:ReportComponent, canActivate : [AuthguardService]},
+    {path:"report/:id", component:ReportComponent, canActivate : [AuthguardService]},
     {path:"", component:BookingComponent, canActivate : [AuthguardService]},
   ]
 },
-
   {path:"admin", component: AdminComponent, children: [
     {path:"login", component:LoginComponent },
     {path:"", redirectTo:"login", pathMatch:"full"},
@@ -39,8 +43,6 @@ const routes: Routes = [
   {path:"contact", component: ContactComponent},
   {path:'', redirectTo:"search", pathMatch:"full"},
   {path:'**', redirectTo:"search", pathMatch:"full"},
-  
-
 ];
 
 

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    <div class="card">
+
+    <table class="table table-sm table-hover"> 
+        <!-- <div *ngFor="let item in reportList ">  -->
+         <div>
+            <br>
+            Rent-No  :  {{reportList.rentalId}}  <br>
+            Client :  {{reportList.userName}} <br>
+            Email:  {{reportList.userEmail}} <br>
+            Telephone:  {{reportList.userEmail}} <br>
+            Return Date:  {{reportList.dropoffDate}} <br>
+            Location:  {{reportList.location}} <br><br>
+
+
+        <thead>
+            <tr>
+              <th class="col-md-2">Rent-date</th>
+              <th class="col-md-2">Return-Date</th>
+              <th class="col-md-1">Car-type</th>
+              <th class="col-md-1">Registration</th>
+              <th class="col-md-1">Car-price</th>
+              <th class="col-md-1">Total-charge</th>
+
+            </tr>
+        </thead>
+            <td class="col-md-2"><strong> {{reportList.pickupDate}}</strong></td>
+            <td class="col-md-2">{{reportList.dropoffDate}}</td>
+            <td class="col-md-1">{{reportList.carType}}</td>
+            <td class="col-md-1">{{reportList.registration}}</td>
+            <td class="col-md-1">{{reportList.carPrice}}</td>
+            <td class="col-md-1">{{reportList.totalCharge}}</td>
+
+    </div>
+    </table>
+</div>
+</div>

@@ -1,6 +1,5 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
 import { Auth, signInWithEmailAndPassword } from '@angular/fire/auth';
-import { Observable, from, map, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -32,7 +31,6 @@ async login(email: string, password: string): Promise<boolean> {
   }
 
   authService(username: string, password: string): Promise<boolean> {
-    //return from(signInWithEmailAndPassword(this.auth, username, password));
     return signInWithEmailAndPassword(this.auth, username, password)
     .then (data => { return true;})
     .catch(err=> { return false})

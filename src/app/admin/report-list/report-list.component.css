@@ -1,0 +1,26 @@
+.center{
+    text-align: center;
+  }
+  
+  h5{
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  .card{
+    max-width: 75%;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: #f6f4f4;
+  
+  }
+  
+  .container-fluid{
+    padding: 10px;
+    background:  url(../../../assets/background.jpg);
+    background-size:cover;
+    background-position:bottom;
+    height: 85vh;
+  
+  }
+  

@@ -10,32 +10,24 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./cars.component.css']
 })
 export class CarsComponent implements OnInit {
-
-  //public carData: any = [];
   public carsData! : Observable<any>;
   public carData! : Observable<any>;
   public locations! : Observable<any>;
   public makes! :  Observable<any>;
   public models! :  Observable<any>;
-
-
   public carUserData: any = [];
   public totalPages: number = 0;
   public page: number = 1;
-
-type: typeof Type = Type;
-carStatus: typeof CarStatus = CarStatus;
-rentalStatus: typeof RentalStatus = RentalStatus;
-
-carAction:string =" Add car";
-carId:string ="";
- 
+  type: typeof Type = Type;
+  carStatus: typeof CarStatus = CarStatus;
+  rentalStatus: typeof RentalStatus = RentalStatus;
+  carAction:string ="Add car";
+  carId:string ="";
 
 constructor(private fb: FormBuilder, private carService : CarService ) { }
 
 carForm = this.fb.group({
-  registration: [''], make: [''], model: [''], type: ['Type'], 
-  location: [''],  price: [''], status: ['Status']
+  registration: [''], make: [''], model: [''], type: ['Type'],location: [''],  price: [''], status: ['Status']
 });
 
   ngOnInit(): void {
@@ -44,14 +36,14 @@ carForm = this.fb.group({
     this. gatAllMakes();
     this.getModelsByMake("Toyota");
   }
+
   manageCar(){}
 
   clearCarForm(){
     this.carAction = "Add car"
     this.carId = "",
     this.carForm.patchValue({
-      registration: "", make: "", model: "", type: "Type", location: "Location",
-      price:"", status:"Status"
+      registration: "", make: "", model: "", type: "Type", location: "Location", price:"", status:"Status"
     })
   }
   
@@ -76,9 +68,7 @@ carForm = this.fb.group({
     this.carService.getCarById(id).then ((value)=> console.log( value.data()) )
   }
 
-  saveCar() {
-   // const {registration, make, model, type, location, price, status, carImgPath  } = this.carForm.value;
-    
+  saveCar() {  
     if (this.carAction == "Edit car"){
       this.carService.updateCar(this.carId, this.carForm);
     } 
@@ -86,19 +76,15 @@ carForm = this.fb.group({
     {
        this.addCar(this.carForm);
     }
-   
     this.clearCarForm();
-
   }
 
 
   addCar(f:any) {
     this.carService.addCarData(f);
-    console.log(f.value);
   }
 
   deleteCar(id:string){
-    console.log("car id:"+id);
     this.carService.deleteCar(id);
   }
 
@@ -112,9 +98,6 @@ carForm = this.fb.group({
   }
   
   getModelsByMake(make: string){
-  //   this.models = this.afs.collection('models', ref => ref.where('make', '==', make))
-  //  .valueChanges();
    }
-
 
 }

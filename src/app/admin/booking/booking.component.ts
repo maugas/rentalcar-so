@@ -58,11 +58,10 @@ export class BookingComponent implements OnInit {
 
   cancelRental(){
     this.showBookingList = true;
+    this.clearForm();
   }
 
   rentIt(refId:string, booking:any){
-     // Need the refId to update the bookings table
-     // need the booking to pass the rental service 
      this.bookingId = booking.value['bookingId'];
      this.bookingKey = booking.key;
      this.isBookingInfo = false;
@@ -86,10 +85,18 @@ export class BookingComponent implements OnInit {
     this.isBookingInfo = false;
     this.showBookingList = false;
     this.rentalAction = "New Rent"
-
+    this.clearForm();
    }
 
   clearForm(){
+    this.rentalForm.patchValue({
+      fullname: '', nname: '', telephone: '', email: '', work:'',
+      cosignerName:'',  cosignerTelephone:'', cosignerWork:'',
+      location: '', type: '',  pickupDate:'', dropoffDate: '',
+      registration: '', price: '', discount: 0, totalCharge: '', 
+      comment:''
+    })
+
   }
 
   saveRental(){
@@ -105,9 +112,9 @@ export class BookingComponent implements OnInit {
       rentalId: 'R-' + this.carService.getBookingRefId(5),
       location: location!,
       bookingId: this.bookingId,
-      pickupDate: pickupDate!,
+      pickupDate: this.carService.formatYmd( new Date(pickupDate!)),
       pickupTime: formatDate( new Date().toISOString(), 'hh:mm', 'en-US', 'GMT+3'),
-      dropoffDate: dropoffDate!,
+      dropoffDate: this.carService.formatYmd( new Date(dropoffDate!)),
       dropoffTime: formatDate( new Date().toISOString(), 'hh:mm', 'en-US', 'GMT+3'),
       status:  RentalStatus.Rented,
       registration: registration!,
@@ -130,8 +137,10 @@ export class BookingComponent implements OnInit {
     };    
 
     this.carService.saveRental( carRental);
-    this.carService.updateRentalStatus (this.bookingKey, RentalStatus.Rented);
     this.showBookingList = true;
+    if (this.bookingKey != ""){
+      this.carService.updateRentalStatus (this.bookingKey, RentalStatus.Rented);
+    }
     this.router.navigate(["/admin/rentals"]);
   }
 
@@ -142,9 +151,6 @@ export class BookingComponent implements OnInit {
     let end = booking.value['dropoffDate'];
     let email = booking.value['email'];
     let status = booking.value['status'];
-
-
-   // alert( 'Email: ' + email  + ' Status' + status )
   }
 
   deleteReservation(id:string){
@@ -158,18 +164,18 @@ export class BookingComponent implements OnInit {
 
   getReservationsByRefId(){
     const  {search} = this.rentalForm.value;
-    if (search?.length != 0){
-       if (search?.includes('@')){
+    this.querySnapshotList = [];
+    if (search!.length == 0)
+    {  
+      this.getBookedReservations();  
+     }
+     else if (search?.includes('@')){
         this.querySnapshotList = this.carService.getBookedReservationByEmail(search!);
-       } else {    
-        this.querySnapshotList = this.carService.getReservationsByRefId(search!);
-       }
-    }else
-    {
-      this.getBookedReservations();
-    }
-
-  }
+       } 
+     else { 
+        this.querySnapshotList = this.carService.getReservationsByRefId(search!);   
+      }
+} 
 
   cancelReservation(id:string, status:RentalStatus){
     if (status != RentalStatus.Cancelled) {

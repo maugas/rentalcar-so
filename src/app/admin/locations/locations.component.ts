@@ -32,9 +32,7 @@ export class LocationsComponent implements OnInit {
   clearForm(){
     this.locAction = "Add Location"
     this.locId = "",
-    this.locationForm.patchValue({
-      location: "Location", address:"", telephone:"", picture:""
-    })
+    this.locationForm.patchValue({      location: "Location", address:"", telephone:"", picture:""  })
   }
 
   saveLocation(){
@@ -54,7 +52,6 @@ export class LocationsComponent implements OnInit {
     this.locId = loc.id,
     this.locationForm.patchValue({
      location: loc.location, address: loc.address , telephone: loc.telephone , picture:loc.picture  })
-
   }
 
   deleteLoc(id:string){
@@ -67,7 +64,6 @@ export class LocationsComponent implements OnInit {
 
   addLoc(f:any) {
     this.carService.addLocation(f);
-    console.log(f.value);
   }
 
 }

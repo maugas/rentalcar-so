@@ -10,6 +10,8 @@ import { RentalsComponent } from './rentals/rentals.component';
 import { LocationsComponent } from './locations/locations.component';
 import { LoginComponent } from './login/login.component';
 import { BookingComponent } from './booking/booking.component';
+import { ReportListComponent } from './report-list/report-list.component';
+import { ReportComponent } from './report/report.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { BookingComponent } from './booking/booking.component';
     RentalsComponent,
     LocationsComponent,
     LoginComponent,
-    BookingComponent
+    BookingComponent,
+    ReportListComponent,
+    ReportComponent
   ],
   imports: [
     CommonModule,

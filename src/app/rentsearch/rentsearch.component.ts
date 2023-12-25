@@ -30,21 +30,16 @@ export class RentsearchComponent implements OnInit {
 
   ngOnInit(): void {
     this.gatAllLocations();
-    this.currentDate = formatDate(new Date(), 'yyyy-MM-dd', 'en');
-   // console.log(this.currentDate)
-
-    //this.searchFormControl.pickupDate.setValue(this.currentDate)
-
+    this.currentDate = formatDate(new Date(), 'yyyy-MM-dd', 'en', 'GMT+3');
+    //print current date as Date
+    // const myDate = new Date(this.currentDate);
+    // console.log("myDate: " + myDate);
     var sdate = new Date();
     sdate.setDate(sdate.getDate() + 1);
-    console.log("sdate :" + sdate);
     var minReturnDate = formatDate(new Date(sdate), "yyyy-MM-dd", 'en')
-    console.log("minReturnDate :" + minReturnDate);
   }
 
-  get searchFormControl() {
-    return this.searchForm.controls;
-  }
+  get searchFormControl() { return this.searchForm.controls; }
 
   onChange(){
     const {pickupLoc, pickupDate, pickupTime, dropoffDate, dropoffTime } = this.searchForm.value;
@@ -54,7 +49,6 @@ export class RentsearchComponent implements OnInit {
   }
 
   addDays(date: Date, days: number): Date {
-    console.log("date: " +date)
     date.setDate(date.getDate() + days);
     return date;
 }
