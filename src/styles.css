@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+	padding-top: 55px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    max-width: 970px;
+  }
+
+  .carousel-caption .show {
+    display: none;
+  }
+
+}
+@media (max-width: 1024px) {
+  .container {
+    max-width: 740px;
+  }
+
+}
+@media (max-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 568px) {
+  .container {
+    max-width: 90%;
+  }
+}

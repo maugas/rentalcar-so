@@ -1,35 +1,28 @@
 <div class="container-fluid">
-    <div *ngIf="showBookingList" class="row">
-        <div class="col-md-2 mt-1">
-          <div>  </div>
-        </div>
-
-        <div class="col-md-8  card mt-1">
-          <!--td><a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()">Edit</a> | 
-            <a href="#" style="cursor:pointer" routerLink="/cars" (click)="manageCar()"> Delete</a> </td-->
+    <div *ngIf="showBookingList" class="">
         <form [formGroup]="rentalForm" (ngSubmit)="manageCar()">
-            <div class="row mt-3">
-             <div class="col-md-5"> <h5>Reservations</h5> </div>
-             <div class="col-md-3"><input class="form-control me-2" formControlName="search" type="text" placeholder="Booking number or email"></div>  
-             <div class="col-md-2">
-                <button class="btn btn-outline-secondary" (click)="getReservationsByRefId()">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-                  </svg>
-                  Search
-                </button>
-              </div> 
-              <div class="col-md-2">
-                <button class="btn btn-outline-secondary" (click)="newRent()">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-plus-fill" viewBox="0 0 16 16">
-                    <path d="M9.293 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.707A1 1 0 0 0 13.707 4L10 .293A1 1 0 0 0 9.293 0M9.5 3.5v-2l3 3h-2a1 1 0 0 1-1-1M8.5 7v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 1 0"/>
-                  </svg>
-                    New Rent
-                </button>
-              </div> 
-              </div>
-
-            <div class="card  mt-2">
+          <div class="top-section one shadow p-3">
+            <div class=""> <h5>Bookings</h5> </div>
+            <div class="search-section">
+             <div> <input class="form-control me-2" name="search" type="text" placeholder="Booking number or email"></div>
+             <div>
+               <button class="btn btn-outline-secondary" (click)="getReservationsByRefId()">
+               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                 </svg>
+               </button>
+             </div>
+            </div>
+             <div class="">
+               <button class="btn btn-outline-secondary" routerLink="/admin/reports" (click)="newRent()">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
+                   <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
+                 </svg>
+                 New Rent
+               </button>
+             </div> 
+         </div> 
+            <div class="top-section show mt-1">
                 <div class="card-body">
                     <table class="table table-sm table-hover">
                         <thead>
@@ -42,13 +35,11 @@
                             <th scope="col">Name</th>
                             <th scope="col">Telephone</th>
                             <th scope="col">Action</th>
-
-
                           </tr>
                         </thead>
                         <tbody>
-                          <tr *ngFor="let booking of querySnapshotList | keyvalue 
-                          paginate: { itemsPerPage: 10, currentPage: page, totalItems: totalPages }">
+                          <tr *ngFor="let booking of querySnapshotList | keyvalue
+                          paginate: { itemsPerPage: 10, currentPage: page, totalItems: 15 }">
                             <td>{{booking.value["bookedDate"]}}</td>
                             <td>{{booking.value["bookingId"]}}</td>
                             <td>{{booking.value["carType"]}}</td>
@@ -64,44 +55,73 @@
                                 <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
                               </svg>
                             </a> | 
-                              <!-- <a  style="cursor:pointer"  (click)="cancelReservation(booking.key)"> 
-                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
-                                <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
-                              </svg>
-                                </a> | -->
                                 <a  style="cursor:pointer" data-toggle="tooltip" data-placement="top" title="Process this rent " (click)="rentIt(booking.key, booking)"> 
                                     <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512">
                                         <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
                                         <path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/>
                                     </svg>
                                 </a> 
-  
                             </td>
                           </div>
+                          <div *ngIf="booking.value['status'] == 'Rented' || booking.value['status'] == 'Returned'">
+                            <strong>{{ booking.value['status'] }} </strong> 
+                          </div>  
+
                           </tr>
                         </tbody>
                       </table>
                       <div class="center"><pagination-controls (pageChange)="page = $event"></pagination-controls></div> 
                 </div>
             </div>
+
+            <div class="top-section hide mt-1">
+              <div class="row row-cols-1 row-cols-md-3 g-3">
+                <div *ngFor="let booking of querySnapshotList | keyvalue ">
+                    <div class="col">
+                      <div class="card">
+                        <div class="card-body">
+                          <h5 class="card-title">Date: {{booking.value["bookedDate"]}} </h5>
+                          <p class="card-text">Ref-No: {{booking.value["bookingId"]}}</p>
+                          <p class="card-text">Car-Type:{{booking.value["carType"]}}</p>
+                          <p class="card-text">Start-date: {{booking.value["pickupDate"]}}</p>
+                          <p class="card-text">Name: {{booking.value["name"]}}</p>
+                          <p class="card-text">Telephone: {{booking.value["telefone"]}}</p>
+
+                          <div *ngIf="booking.value['status'] !== 'Rented' && booking.value['status'] !== 'Returned'">
+                            <td><a  style="cursor:pointer" data-toggle="tooltip" data-placement="top" title="Show this booking" (click)="editBooking(booking)">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                                <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                                <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+                              </svg>
+                            </a> | 
+                                <a  style="cursor:pointer" data-toggle="tooltip" data-placement="top" title="Process this rent " (click)="rentIt(booking.key, booking)"> 
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 512 512">
+                                        <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                                        <path d="M135.2 117.4L109.1 192H402.9l-26.1-74.6C372.3 104.6 360.2 96 346.6 96H165.4c-13.6 0-25.7 8.6-30.2 21.4zM39.6 196.8L74.8 96.3C88.3 57.8 124.6 32 165.4 32H346.6c40.8 0 77.1 25.8 90.6 64.3l35.2 100.5c23.2 9.6 39.6 32.5 39.6 59.2V400v48c0 17.7-14.3 32-32 32H448c-17.7 0-32-14.3-32-32V400H96v48c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32V400 256c0-26.7 16.4-49.6 39.6-59.2zM128 288a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64z"/>
+                                    </svg>
+                                </a> 
+                            </td>
+                          </div>
+                          <div *ngIf="booking.value['status'] == 'Rented' || booking.value['status'] == 'Returned'">
+                            <strong>{{ booking.value['status'] }} </strong> 
+                          </div>  
+  
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+
           </form>
-          
-          <!-- TABLE SEARCH BEGIN-->
-          <!-- TABLE SEARCH END-->
           <br>
-        </div>
     </div>
  
     <!----  Begin detail page-->
 
-    <div *ngIf="isBookingInfo" class="row">
-      <div class="col-md-2 mt-2">
-        <div>  </div>
-      </div>
-    
-      <div class="col-md-8  card mt-1">
-        <div>      
-            <td class="col-md-2">
+    <div *ngIf="isBookingInfo" class="">    
+      <div class="top-section shadow p-3 ">
+            <td class="card-body">
               <span><strong>Start Date: </strong> &nbsp; {{showBookingInfo.value["pickupDate"]}}</span>&nbsp;&nbsp;
               <span><strong>End Date: </strong> &nbsp;{{showBookingInfo.value["dropoffDate"]}}</span>&nbsp;&nbsp;
               <span><strong>Email: </strong>&nbsp;{{showBookingInfo.value["email"]}}</span>&nbsp;&nbsp;
@@ -124,29 +144,22 @@
     </div>
     <!----   End of detail page-->
  <!--  BEGIN -->
- <div *ngIf="!showBookingList" class="row">
-
-  <div class="col-md-2 mt-1">
-    <div>  </div>
-  </div>
+ <div *ngIf="!showBookingList" class="">
   
-  <div class="col-md-8  card mt-1">
-   <h5 class="t">{{ rentalAction }}</h5>
-   <!--  Beginning of card -->
+  <div class="top-section-form shadow p-3  card mt-1">
+   <h5 class="">{{ rentalAction }}</h5>
   <form [formGroup]="rentalForm" (ngSubmit)="manageCar()">
     <div class="mt-1">
       <td class="col-md-2">
         <div class="input-group">
           <span class="input-group-text">Full name</span>
         <input type="text" class="form-control" placeholder="Full name " formControlName="fullname">
-        <!-- <span *ngIf="bookingFormControl.fname.invalid && (bookingFormControl.fname?.dirty || bookingFormControl.fname?.touched || submitted)" class="text-danger"> <small>First name is required</small></span> -->
         </div>
       </td>
       <td class="col-md-2">
         <div class="input-group">
           <span class="input-group-text">Nick name</span>
           <input type="text" class="form-control" placeholder="Nick name " formControlName="nname">
-          <!-- <span *ngIf="bookingFormControl.lname.invalid && (bookingFormControl.lname?.dirty || bookingFormControl.lname?.touched || submitted)" class="text-danger"> <small>Last name is required</small></span> -->
         </div>
       </td>
 
@@ -307,6 +320,5 @@
  <!-- END -->
   </div>
   <br>
-</div>
 
 

@@ -1,3 +1,82 @@
 .container-fluid{
     background: linear-gradient(rgba(0, 0, 0, 0), hsl(150, 8%, 95%)), url(../../../assets/background.jpg);
   }
+
+  /* .input-search {
+    margin-right: 0;
+  }
+
+  .search-button {
+    margin-left: -22px;
+  }
+
+  .search-button:hover {
+    background-color: lightgrey;
+  } */
+
+  .top-section{
+    display: flex;
+    max-width: 80%;
+    margin-top: 5px;
+    margin-left: 10%;
+    padding: 10px;
+    align-items:center;
+    align-content: center;
+    justify-content: space-between;
+    border: 1px solid rgb(229, 219, 219);
+    background-color: white;
+  }
+
+  .search-section {
+    display: flex;
+    max-width: 30%;
+  }
+
+  .top-section-form {
+    display: flex;
+    max-width: 80%;
+    margin-top: 5px;
+    margin-left: 10%;
+    padding: 10px;
+    justify-content: space-between;
+    border: 1px solid rgb(229, 219, 219);
+    background-color: white;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      max-width: 600px;
+    }
+
+    .show {
+      display: none;
+    }
+
+     .hide {
+      display: flex;
+    }
+  
+  }
+  
+  @media (max-width: 568px) {
+    .container {
+      max-width: 90%;
+    }
+  
+    .hide {
+      display: flex;
+    }
+  
+    .show {
+      display: none;
+    }
+
+  }
+
+
+
+

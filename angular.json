@@ -6,6 +6,12 @@
     "rentalcar-so": {
       "projectType": "application",
       "schematics": {},
+      "i18n":{
+          "sourceLocale" :"en",
+          "locales": {
+            "so": "src/translate/messages.so.xlf"
+          }
+        },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -56,15 +62,29 @@
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
-            }
+            },
+            "en":{
+              "localize" : [ "en" ]
+            },
+            "so":{
+              "localize" : [ "so" ]
+            }  
           },
+
           "defaultConfiguration": "production"
         },
+        
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
               "browserTarget": "rentalcar-so:build:production"
+            },
+            "en": {
+              "browserTarget": "rentalcar-so:build:en"
+            },
+            "so": {
+              "browserTarget": "rentalcar-so:build:so"
             },
             "development": {
               "browserTarget": "rentalcar-so:build:development"

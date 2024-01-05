@@ -15,7 +15,7 @@ export class RentsearchComponent implements OnInit {
   currentDate = "";
   minReturnDate = "";
   maxDate = "";
- 
+  formErr = 0;
   submitted = false;
 
   carsData! : Observable<any>;
@@ -31,9 +31,6 @@ export class RentsearchComponent implements OnInit {
   ngOnInit(): void {
     this.gatAllLocations();
     this.currentDate = formatDate(new Date(), 'yyyy-MM-dd', 'en', 'GMT+3');
-    //print current date as Date
-    // const myDate = new Date(this.currentDate);
-    // console.log("myDate: " + myDate);
     var sdate = new Date();
     sdate.setDate(sdate.getDate() + 1);
     var minReturnDate = formatDate(new Date(sdate), "yyyy-MM-dd", 'en')
@@ -59,11 +56,17 @@ export class RentsearchComponent implements OnInit {
 
   getAvailableCars(){
     this.submitted = true;
+    this.formErr = 0;
     if (!this.searchForm.valid) {
       return
     }
     const {pickupLoc, pickupDate, pickupTime, dropoffDate, dropoffTime } = this.searchForm.value;
     var days =this.carService.calculateDiffDates(pickupDate, dropoffDate);
+
+    if (days < 1){
+      this.formErr = 5;
+      return
+    }
 
     localStorage.setItem("searchForm", pickupLoc+"|"+pickupDate+"|"+ pickupTime+"|"+ dropoffDate+"|"+ dropoffTime + "|" + days);
 

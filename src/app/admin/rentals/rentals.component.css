@@ -5,3 +5,58 @@
 .bold{
   font-weight:bold;
   }
+
+  .top-section{
+    display: flex;
+    max-width: 80%;
+    margin-top: 5px;
+    margin-left: 10%;
+    padding: 10px;
+    align-items:center;
+    align-content: center;
+    justify-content: space-between;
+    border: 1px solid rgb(229, 219, 219);
+    background-color: white;
+  }
+  
+  .search-section {
+    display: flex;
+    max-width: 30%;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      max-width: 600px;
+    }
+
+    .show {
+      display: none;
+    }
+
+     .hide {
+      display: flex;
+      flex-direction: column;
+
+    }
+  
+  }
+  
+  @media (max-width: 568px) {
+    .container {
+      max-width: 90%;
+    }
+  
+    .hide {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .show {
+      display: none;
+    }
+
+  }

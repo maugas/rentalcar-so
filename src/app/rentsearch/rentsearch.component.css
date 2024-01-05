@@ -5,21 +5,154 @@ h3{
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-.container-fluid{
+.container-fluid {
   background: linear-gradient(rgba(0, 0, 0, 0), hsl(150, 8%, 95%)), url(../../assets/background.jpg);
 }
 
-@media (max-width: 640px) {
-  .THIS input[type="date"]:before {
-      content: 'yourcontent' !important;
-  }
+.search-top {
+  display: flex;
+  gap: 10px; 
+  justify-content: space-between;
+  margin-top: 10px;
+}
 
-  .THIS input[type="date"]:focus:before {
-      content: '' !important;
-  }
+.search-pickup {
+  display: flex; 
+  width:50%;
+}
 
-  .THIS input[type="date"] {
-      display: flex;
+.search-pickup .input-group {
+  display: block;
+}
+
+.search-pickup .form-select {
+  margin-top: -25px; 
+  height: 55px;
+}
+
+.return-loc {
+  margin-top: -25px; 
+  opacity: 0.5; 
+  border: 1px solid gray; 
+}
+
+.search-pickup img {
+  margin-left: 10px;
+  width: 20px;
+}
+
+.search-top label {
+  padding-left: 35px;
+}
+
+.search-date-pickup-group {
+  display: inline-block; 
+  width:70%
+}
+
+.search-date .form-floating {
+  margin-right: 2px
+}
+
+.search-date input {
+  height: 55px;
+}
+
+.search-time {
+  width:30%;
+}
+
+
+.top-carousel {
+  width: 80%;
+  height: 20%;
+  margin-top: 15px;
+  margin-left: 10%;
+}
+
+.container-main {
+  margin-top: 15px;
+}
+
+.search-form {
+  width: 80%;
+  margin-top: 15px;
+  margin-left: 10%;
+}
+
+
+.packages {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.row-top{
+  /* background: linear-gradient(rgba(0, 0, 0, 0), hsl(150, 8%, 95%)), url(../../assets/background.jpg); */
+}
+
+.subtitle {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: rgb(68, 66, 66);
+  line-height: 20px;
+  padding-left: 15px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+}
+
+.card-title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(68, 66, 66);
+
+}
+
+.card-text {
+  font-family: Arial;
+  font-size: 14px;
+  color: rgb(68, 66, 66);
+}
+
+
+.show {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 600px;
+  }
+  .show {
+    display:block;
+  }
+  
+  .search-top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; 
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .search-pickup {
+    display: flex; 
+    width:100%;
+  }
+  
+  .return  {
+    display: none;
   }
 }
 
+@media (max-width: 568px) {
+  .container {
+    max-width: 90%;
+  }
+  .show {
+    display:block;
+  }
+
+}

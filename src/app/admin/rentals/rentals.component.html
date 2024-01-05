@@ -1,33 +1,30 @@
 <div class="container-fluid">
-  <div *ngIf="showRentalList" class="row">
-      <div class="col-md-2 mt-1">
-        <div>  </div>
-      </div>
+  <div *ngIf="showRentalList" class="">
 
-      <div class="col-md-8  card mt-1">
       <form [formGroup]="rentalForm">
-          <div class="row mt-3">
-           <div class="col-md-5"> <h5>Rentals</h5> </div>
-           <div class="col-md-3"><input class="form-control me-2" name="search" type="text" placeholder="Booking number or email"></div>  
-           <div class="col-md-2">
-            <button class="btn btn-outline-secondary" (click)="getReservationsByRefId()">
+        <div class="top-section shadow p-3">
+           <div class=""> <h5>Rentals</h5> </div>
+           <div class="search-section">
+            <div> <input class="form-control me-2" name="search" type="text" placeholder="Booking number or email"></div>
+            <div>
+              <button class="btn btn-outline-secondary" (click)="getReservationsByRefId()">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                   <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
                 </svg>
-                Search
-            </button>
-            </div> 
-            <div class="col-md-2">
+              </button>
+            </div>
+           </div>
+            <div class="">
               <button class="btn btn-outline-secondary" routerLink="/admin/reports" (click)="reports()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book-fill" viewBox="0 0 16 16">
                   <path d="M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783"/>
                 </svg>
-                    Rent Reports
+                Rent Reports
               </button>
             </div> 
-        </div>
+        </div> 
 
-          <div class="card mt-2">
+        <div class="top-section">
               <div class="card-body">
                   <!-- <table class="table table-sm table-hover"> -->
                     <div class="table-responsive-md">
@@ -80,28 +77,23 @@
                      </div> 
                     <div class="center"><pagination-controls (pageChange)="page = $event"></pagination-controls></div> 
               </div>
-          </div>
-        </form>
+         </div>
+      </form>
         <br>
-      </div>
   </div>
 
 <!--  BEGIN -->
-<div *ngIf="!showRentalList" class="row">
-
-<div class="col-md-2 mt-1">
-  <div>  </div>
-</div>
-
-<div class="col-md-8  card mt-1">
-  <h5 class="t"><u> {{ rentalAction }} &nbsp; &nbsp; <span><small>{{rentLocation}}</small></span></u></h5>
+<div *ngIf="!showRentalList" class="">
+<div class="top-section shadow p-3  card mt-1">
+  <h5 class="t"> {{ rentalAction }}</h5>
+  <span><strong><u>{{rentLocation}}</u></strong> </span>
   <span><strong>{{userName}}</strong> </span>
-  <span>Email: {{userEmail}}</span> 
+  <span> {{userEmail}}</span> 
   <span>Tel: {{userTelephone}}</span>
   <span>{{coName}}   {{coTelephone}}</span>
   <hr>
  <!--  Beginning of card -->
-<form [formGroup]="rentalForm">
+<form [formGroup]="rentalForm" class="show">
           <div class="mt-2">
             <td class="col-md-2">
               <div class="input-group">
@@ -205,6 +197,88 @@
         </div>
         <br>
  </form>
+
+
+ <form [formGroup]="rentalForm"  class="hide">
+  <div class="mt-2">
+      <div class="input-group">
+        <span class="input-group-text">Car type &nbsp;</span>     
+      <select class="form-select form-select-sm" aria-label=".form-select-sm"  formControlName="type" style="font-weight: bold;" #type>
+        <option selected>Type</option>
+        <option value="Compact">Compact</option>
+        <option value="Full-Size">Full-Size</option>
+        <option value="SUV">SUV</option>
+        <option value="Luxury">Luxury</option>
+      </select>
+      </div>
+      <div class="input-group mt-1">
+        <span class="input-group-text">Registration</span>     
+        <input type="text" class="form-control" formControlName="registration" placeholder="Car registration" name="registration" style="font-weight: bold;">
+        <!-- <span *ngIf="rentalForm.registration.invalid && (bookingFormControl.fname?.dirty || bookingFormControl.fname?.touched || submitted)" class="text-danger"> <small>First name is required</small></span> -->
+    </div>  
+
+  </div>
+
+      <div class="input-group mt-1">
+        <span class="input-group-text">Rent date</span>       
+      <input type="date"   class="form-control" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate">
+      <!-- <span *ngIf="searchFormControl.pickupDate?.invalid && (searchFormControl.pickupDate?.dirty || searchFormControl.pickupDate?.touched || submitted)" class="text-danger"> <small>Pick-up date is required</small></span> -->
+    </div>  
+        <div class="input-group mt-1">
+          <span class="input-group-text">Return date</span>     
+      <input type="date"  class="form-control" placeholder="Drop-off date" aria-label="Drop-off date" formControlName="dropoffDate">
+      <!-- <span *ngIf="searchFormControl.dropoffDate?.invalid && (searchFormControl.dropoffDate?.dirty || searchFormControl.dropoffDate?.touched || submitted)" class="text-danger"> <small>Drop-off date is required</small></span> -->
+    </div>  
+
+      <div class="input-group mt-1">
+        <span class="input-group-text">Price  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>     
+      <input formControlName="price" type="text" class="form-control"  placeholder="$ Rent per day" style="font-weight: bold;">
+    </div>  
+     <div class="input-group mt-1">
+        <span class="input-group-text">Discount &nbsp;&nbsp;&nbsp;&nbsp;</span>     
+      <input type="text" id="discount" class="form-control" placeholder="Discount" formControlName="discount" style="font-weight: bold;">
+      <!-- <span *ngIf="bookingFormControl.fname.invalid && (bookingFormControl.fname?.dirty || bookingFormControl.fname?.touched || submitted)" class="text-danger"> <small>First name is required</small></span> -->
+     </div> 
+
+      <div class="input-group mt-1">
+        <span class="input-group-text">Total &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>     
+      <input type="text" id="totalCharge" class="form-control" placeholder="$ Total charge" formControlName="totalCharge" style="font-weight: bold;">
+      <!-- <span *ngIf="bookingFormControl.lname.invalid && (bookingFormControl.lname?.dirty || bookingFormControl.lname?.touched || submitted)" class="text-danger"> <small>Last name is required</small></span> -->
+    </div>  
+
+      <div class="input-group mt-1">
+        <span class="input-group-text">Status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>     
+      <select class="form-select form-select-sm" aria-label=".form-select-sm" formControlName="status" #status>
+        <option selected>Status</option>
+        <option *ngFor="let cs of rentStatus | keyvalue" [value]="cs.value">
+          {{cs.value}}    
+        </option>              
+    </select>
+      </div>
+
+      <div class="input-group mt-1">
+        <span class="input-group-text">Comment</span>        
+      <input type="text" class="form-control" formControlName="comment" placeholder="Comment" name="comment">
+      </div>
+
+<div class="mt-1">
+  <td class="col-md-2"> <button type="button" class="btn btn-outline-secondary mt-2" data-toggle="tooltip" data-placement="top" title="Go Back"  (click)="cancelRental()" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-square-fill" viewBox="0 0 16 16">
+      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm3.354 4.646L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 1 1 .708-.708"/>
+    </svg> 
+    &nbsp; Back</button>
+  </td>
+            
+  <td class="col-md-2"> <button type="button" class="btn btn-outline-secondary mt-2" data-toggle="tooltip" data-placement="top" title="Update Rental" (click)="updateRental()" >
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-save-fill" viewBox="0 0 16 16">
+      <path d="M8.5 1.5A1.5 1.5 0 0 1 10 0h4a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h6c-.314.418-.5.937-.5 1.5v7.793L4.854 6.646a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l3.5-3.5a.5.5 0 0 0-.708-.708L8.5 9.293z"/>
+    </svg>
+    &nbsp; Update </button>
+  </td>
+</div>
+<br>
+</form>
+
 </div>
   <!-- End of card -->
 </div>

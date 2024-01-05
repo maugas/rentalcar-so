@@ -1,3 +1,15 @@
 .container-fluid{
     background: linear-gradient(rgba(0, 0, 0, 0), hsl(150, 8%, 95%)), url(../../assets/background.jpg);
 }
+
+.top-section{
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    margin-top: 15px;
+    margin-left: 10%;
+    padding-top: 10px;
+    align-items:flex-start;
+    align-content: center;
+  }
+  

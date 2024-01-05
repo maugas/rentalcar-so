@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5898629349217009979" datatype="html">
+        <source> We are one of the leading car rentals in Mogadishu, Somalia. We offer convenient car rental options for tourists, businessmen and VIP officials. The company was established in April 15, 2020 and had been providing rental service ever since. It provides cheapest car rental rates for self drive, chauffeur drive, drop off and airline crew shuttle. Furthermore, we provide car service rentals for special occasions, such as conventions, weddings and debuts. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>We offer a variety of vehicles such us TOYOTA CAROLLA, TOYOTA PREMIO, TOYOTA HARRIER, TOYOTA SURF, TUSCAN , HIACE &amp; LAND CRUISER PRADO, which are carefully maintained. Plus, all vehicle rates are flexible hence Bulsho Car Rental Services is inviting everyone to drive and have a convenient travel through its practical and easy rent a car service. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>OUR VISSION<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/> To promote a friendly, secured and safety transportation services for the clients and build trust and confidence to attain excellence of service. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>OUR MISSION<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>To stipulate the necessary reinforcement through provision of good cars, and dedicated employees that is sensitive and responsive to the needs of clients and promote quality of service to enhance competitiveness. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>OUR VALUES<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/><x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br&gt;"/>Our business is known for the practical rental rate choices. We consider an ethical standards towards our employees and clients, and focus on our client’s safety, comfort, and satisfaction. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/about/about.component.html</context>
+          <context context-type="linenumber">8,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3370104587810609312" datatype="html">
+        <source> © Bulsho Car Rentals 2020–2024</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3878402481723111016" datatype="html">
+        <source>Location: Mogadishu, Somalia </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6421027114556772178" datatype="html">
+        <source>Email: bulshocarrentals@gmail.com</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3011588867481512584" datatype="html">
+        <source>Mobile: + 252 648 89090 | 0648 89090</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7190079289544201061" datatype="html">
+        <source>Office: 854399 </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/contact/contact.component.html</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1989651749024344579" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{car.value[&apos;make&apos;]}}"/> - <x id="INTERPOLATION_1" equiv-text="{{car.value[&apos;model&apos;]}}"/> or similar</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentavailable/rentavailable.component.html</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9159133419356155570" datatype="html">
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-check-square-fill&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zm10.03 4.97a.75.75 0 0 1 .011 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.75.75 0 0 1 1.08-.022z&quot;/&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Reserve </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentavailable/rentavailable.component.html</context>
+          <context context-type="linenumber">23,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3786484963135378060" datatype="html">
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-backspace-fill&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8z&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8z&quot;/&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Back </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentavailable/rentavailable.component.html</context>
+          <context context-type="linenumber">43,46</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">45,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8968543130328972761" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="}"/> <x id="INTERPOLATION_1" equiv-text="{{cCar.model}}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1499941400688914160" datatype="html">
+        <source>Secure booking - only takes one minute!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">16,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6595741232564599508" datatype="html">
+        <source>Who is driving?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">17,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1324273546303597822" datatype="html">
+        <source>First name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7809764994253632381" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="First"/>First name is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">22,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8693101818400100725" datatype="html">
+        <source>Last name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8664633751614947734" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Last"/>Last name is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6304432362546770951" datatype="html">
+        <source>Address</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">30</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4768749765465246664" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8931251754619029540" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Email"/>Email is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">34,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="714527710903090345" datatype="html">
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-book-fill&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;/svg&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Book </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">52,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4993335522962375148" datatype="html">
+        <source>Please wait while processing your booking ...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">67,68</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5608020325802458320" datatype="html">
+        <source>Thank you for booking</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentconfirm/rentconfirm.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1704652206308930708" datatype="html">
+        <source> Your booking number is: <x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/><x id="INTERPOLATION" equiv-text="{{bookingNumber}}"/><x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentconfirm/rentconfirm.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4614986668641549409" datatype="html">
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-door-closed-fill&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M12 1a1 1 0 0 1 1 1v13h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V2a1 1 0 0 1 1-1zm-2 9a1 1 0 1 0 0-2 1 1 0 0 0 0 2&quot;/&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Close </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentconfirm/rentconfirm.component.html</context>
+          <context context-type="linenumber">9,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3784867731113851080" datatype="html">
+        <source>Car Rental in Mogadishu</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3500993183114246218" datatype="html">
+        <source>Rent cars through our online platform, and rest assured that we&apos;ll take care of your reservation.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">20,21</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5482935369838695687" datatype="html">
+        <source>Best Car Rental Service!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3765103289377120132" datatype="html">
+        <source>Best rental prices with complete transparency, no concealed additional fees, as all charges are inclusive!, and payment is made at the time of pick up. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">31,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5751951007611306489" datatype="html">
+        <source>Fast and Effective Service</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4819301975404499790" datatype="html">
+        <source>Choose the car of your choice for an unforgettable journey. Click it, and we&apos;ll prepare it for your adventure.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4399850127644069619" datatype="html">
+        <source><x id="START_TAG_OPTION" ctype="x-option" equiv-text="cted&gt;"/>Pick-up location<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option_1" equiv-text="&lt;option *ngFor=&quot;let loc of locations | async&quot;&gt;"/> <x id="INTERPOLATION" equiv-text="{{loc.location}}"/> <x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">69,73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6173968454494380268" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Pick-"/>Pick-up location is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">75,76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8740282838939812144" datatype="html">
+        <source>Return location</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">79,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7165266370454291578" datatype="html">
+        <source>Same as pick-up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2733374313182248694" datatype="html">
+        <source>Pick-up date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">89,90</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4823152320724466560" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Pick-"/>Pick-up date is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">92,93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8750137196277155756" datatype="html">
+        <source>Pick-up time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">96,97</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4027752602668447426" datatype="html">
+        <source>Return date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">105,106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="98703668180523103" datatype="html">
+        <source>Drop-off date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7911130972181902137" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Retur"/>Return date is required <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">108,109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6158985509447509837" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Retu"/> Return date must be after pick-up date <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">109,110</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6468490757182593650" datatype="html">
+        <source>Return time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">114,115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3561443199537596655" datatype="html">
+        <source>Drop-of time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="251281598645512439" datatype="html">
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-search&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="Search"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Search </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">123,127</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="499598226621959590" datatype="html">
+        <source>Packages! <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;card-text&quot;&gt;"/> Ask us<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">142,143</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4356564047869647860" datatype="html">
+        <source>Explore Banaadir beaches - and other top vacation destinations </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">143,144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7752984457249839552" datatype="html">
+        <source>Jaziira Beach</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">150,151</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8366128798008173840" datatype="html">
+        <source>Jazeera Beach -Xeebta Jasiira- is just a few kilometers south of the capital of Somalia.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">151,152</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2137816181822679233" datatype="html">
+        <source>Abaay-dhaxan</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">159,160</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="757326403473689727" datatype="html">
+        <source>Abay Dhaxan beach is located between Mogadishu and Jazeera, Banadir - Somalia</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">160,161</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3889942985284616894" datatype="html">
+        <source>Warsheekh</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">168,169</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8057514658713530375" datatype="html">
+        <source>Warsheikh is a historical district with beautiful beaches, and it&apos;s only 65 KM away from Mogadishu.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">169,170</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

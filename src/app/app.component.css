@@ -4,6 +4,11 @@
   width:100%;
   }
 
+  body {
+    margin: 0;
+    padding-top: 150px;
+  }
+
   @media (max-width: 640px) {
     .THIS input[type="date"]:before {
         content: 'yourcontent' !important;

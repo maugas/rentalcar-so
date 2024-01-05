@@ -1,74 +1,93 @@
   
-
-<div class="" *ngIf="isAdmin">
-  <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container-fluid">
-      <div class="col-md-1"></div>
-      <a class="navbar-brand text-bold" href="#">
-        <img    width="200"  height="50"  alt="Bulsho Logo"  src="../../assets/Logo-bulsho.png"/>         
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/admin/booking"><strong>Reservations</strong></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/admin/rentals"><strong>Rentals</strong></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link " routerLink="/admin/users"><strong>Users</strong></a>
-          </li>
-          <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/admin/cars"><strong>Cars</strong></a>
-           </li> 
-           <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/admin/locations"><strong>Locations</strong></a>
-           </li> 
-           <li class="nav-item" [routerLinkActive]="['active']">
-            <a class="nav-link" routerLink="/" (click)="logout()"><strong>Logout</strong></a>
-           </li> 
-
-        </ul>
-      </div>
-      <div class="col-md-3"></div>
-
-    </div>
-  </nav>
-
-</div> 
-
-    <!-- <div class="navbar navbar-light bg-light col-md-1">
-    </div> -->
-  <div class="" *ngIf="!isAdmin">
-    <nav class="navbar navbar-expand-md navbar-light bg-light">
-      <div class="container-fluid">
-        <div class="col-md-1"></div>
+  <div class="" >
+    <div class="bulsho">
+    <nav class="container navbar navbar-expand-md navbar-light bg-light">     
+        <div class="navbar-logo">
         <a class="navbar-brand text-bold" href="#">
-          <img    width="200"  height="50"  alt="Bulsho Logo"  src="../../assets/Logo-bulsho.png"/>         
+          <img src="assets/Logo-bulsho.png"/>         
         </a>
-
+      </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item" [routerLinkActive]="['active']">
-              <a class="nav-link" routerLink="/search"><strong>Home</strong></a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['active']">
-              <a class="nav-link " routerLink="/contact"><strong>Contacts</strong></a>
-            </li>
-            <li class="nav-item" [routerLinkActive]="['active']">
-              <a class="nav-link" routerLink="/about"><strong>About</strong></a>
-          </ul>
-        </div>
-        <div class="col-md-3"></div>
 
+          <div class="collapse navbar-collapse" id="navbarNav" *ngIf="isAdmin">
+            <div class="navbar-nav">
+              <div class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" (click)="toggle()" routerLink="/admin/booking"><strong>Reservations</strong></a>
+              </div>
+              <div class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" (click)="toggle()" routerLink="/admin/rentals"><strong>Rentals</strong></a>
+              </div>
+              <div class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" (click)="toggle()" routerLink="/admin/users"><strong>Users</strong></a>
+              </div>
+              <div class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" (click)="toggle()" routerLink="/admin/cars"><strong>Cars</strong></a>
+              </div>
+              <div class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" (click)="toggle()" routerLink="/admin/locations"><strong>Locations</strong></a>
+              </div>
+              <div class="nav-item" [routerLinkActive]="['active']">
+                <a class="nav-link" (click)="toggle()" routerLink="/" (click)="logout()"><strong>Logout</strong></a>
+              </div>
+          </div>
+        </div>
+
+
+    <!-- <div class="navbar navbar-light bg-light col-md-1">
+    </div> -->
+        <div class="collapse navbar-collapse" id="navbarNav" *ngIf="!isAdmin">
+          <div class="navbar-nav">
+            <div class="nav-item" [routerLinkActive]="['active']">
+              <a class="nav-link" (click)="toggle()" routerLink="/search"><strong>Home</strong></a>
+            </div>
+            <div class="nav-item" [routerLinkActive]="['active']">
+              <a class="nav-link" (click)="toggle()" routerLink="/contact"><strong>Contacts</strong></a>
+            </div>
+            <div class="nav-item" [routerLinkActive]="['active']">
+              <a class="nav-link" (click)="toggle()" routerLink="/about"><strong>About</strong></a>
+            </div>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                  <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                </svg>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="/so">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" id="flag-icons-so" viewBox="0 0 640 480">
+                    <defs>
+                      <clipPath id="so-a">
+                        <path fill-opacity=".7" d="M-85.3 0h682.6v512H-85.3z"/>
+                      </clipPath>
+                    </defs>
+                    <g fill-rule="evenodd" clip-path="url(#so-a)" transform="translate(80)scale(.9375)">
+                      <path fill="#40a6ff" d="M-128 0h768v512h-768z"/>
+                      <path fill="#fff" d="M336.5 381.2 254 327.7l-82.1 54 30.5-87.7-82-54.2L222 239l31.4-87.5 32.1 87.3 101.4.1-81.5 54.7z"/>
+                    </g>
+                  </svg>   
+                  Soomaali</a></li>
+                <li><a class="dropdown-item" href="/en">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" id="flag-icons-us" viewBox="0 0 640 480">
+                    <path fill="#bd3d44" d="M0 0h640v480H0"/>
+                    <path stroke="#fff" stroke-width="37" d="M0 55.3h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/>
+                    <path fill="#192f5d" d="M0 0h364.8v258.5H0"/>
+                    <marker id="us-a" markerHeight="30" markerWidth="30">
+                      <path fill="#fff" d="m14 0 9 27L0 10h28L5 27z"/>
+                    </marker>
+                    <path fill="none" marker-mid="url(#us-a)" d="m0 0 16 11h61 61 61 61 60L47 37h61 61 60 61L16 63h61 61 61 61 60L47 89h61 61 60 61L16 115h61 61 61 61 60L47 141h61 61 60 61L16 166h61 61 61 61 60L47 192h61 61 60 61L16 218h61 61 61 61 60z"/>
+                  </svg>                  
+                  English</a></li>
+              </ul>
+            </li>
+
+
+        </div>
       </div>
     </nav>
-  
+  </div>
+
+
   </div> 

@@ -1,5 +1,5 @@
 import { formatCurrency, formatDate } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck, OnChanges } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
@@ -47,6 +47,14 @@ export class BookingComponent implements OnInit {
    
   ngOnInit(): void {
     this.getBookedReservations();
+  }
+
+  ngOnChanges(){
+    console.log("CHANGES")
+  }
+  ngDoCheck(){
+    console.log("DO CHECK")
+    this. getCount(this.querySnapshotList)
   }
 
   get rentalFormControl() {  return this.rentalForm.controls;}
@@ -160,6 +168,19 @@ export class BookingComponent implements OnInit {
 
   getBookedReservations(){
     this.querySnapshotList = this.carService.getBookedReservations("Mogadishu");
+    const length: number = Object.keys(this.querySnapshotList).length;
+
+    console.log ("Length of the query: " + length);
+
+  }
+
+
+  getCount(qsList : any){
+    //const length: number = Object.keys(this.querySnapshotList).length;
+    this.totalPages = Object.keys(this.querySnapshotList).length;
+
+    console.log ("Total pages: " + this.totalPages);
+
   }
 
   getReservationsByRefId(){

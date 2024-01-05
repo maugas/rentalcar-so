@@ -1,5 +1,5 @@
 
 .container-fluid{
-    background: linear-gradient(rgba(0, 0, 0, 0), hwb(0 94% 6%)), url(../../assets/background.jpg);
-  }
+  background: linear-gradient(rgba(0, 0, 0, 0), hsl(10%, 8%, 95%)), url(../../assets/background.jpg);
+}
   

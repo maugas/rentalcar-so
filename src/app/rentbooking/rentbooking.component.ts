@@ -58,8 +58,6 @@ export class RentbookingComponent implements OnInit {
     this.cCar.type = carValues[5];
     this.cCar.price = carValues[6];
     this.cPrice = Number(this.cCar.price);
-
-   //this.bookingService.currentBooking.subscribe(data => console.log(data))
   }
 
 get bookingFormControl() {  return this.bookingForm.controls;}
@@ -67,9 +65,9 @@ get bookingFormControl() {  return this.bookingForm.controls;}
 manageSearch(){}
 
 async booking(){
-  this.isDisplayed = true;
   this.submitted = true;
   if (!this.bookingForm.valid) { return }
+  this.isDisplayed = true;
 
   const {fname, lname, address, email, telephone} = this.bookingForm.value;
 
