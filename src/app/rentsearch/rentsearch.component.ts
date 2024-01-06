@@ -39,6 +39,7 @@ export class RentsearchComponent implements OnInit {
   get searchFormControl() { return this.searchForm.controls; }
 
   onChange(){
+    this.formErr = 0;
     const {pickupLoc, pickupDate, pickupTime, dropoffDate, dropoffTime } = this.searchForm.value;
     let sDate = String(pickupDate).split('-');
     var newDate = new Date(Number(sDate[0]), Number(sDate[1])-1, Number(sDate[2]));

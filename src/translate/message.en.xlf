@@ -16,8 +16,8 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3878402481723111016" datatype="html">
-        <source>Location: Mogadishu, Somalia </source>
+      <trans-unit id="8341742870104160968" datatype="html">
+        <source>Location: Erdoğan Rd, Mogadishu, Somalia </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contact/contact.component.html</context>
           <context context-type="linenumber">9</context>
@@ -42,6 +42,27 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contact/contact.component.html</context>
           <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3336840562550858646" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Home<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="948535978156015847" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Contacts<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7038266146985831760" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>About<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1989651749024344579" datatype="html">
@@ -139,6 +160,20 @@
           <context context-type="linenumber">34,36</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="165594150671707240" datatype="html">
+        <source>Telephone number</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8956252629765503078" datatype="html">
+        <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Telep"/>Telephone is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
+          <context context-type="linenumber">39,40</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="714527710903090345" datatype="html">
         <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-book-fill&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;/svg&gt;"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Book </source>
         <context-group purpose="location">
@@ -228,166 +263,170 @@
           <context context-type="linenumber">42,43</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4399850127644069619" datatype="html">
-        <source><x id="START_TAG_OPTION" ctype="x-option" equiv-text="cted&gt;"/>Pick-up location<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option_1" equiv-text="&lt;option *ngFor=&quot;let loc of locations | async&quot;&gt;"/> <x id="INTERPOLATION" equiv-text="{{loc.location}}"/> <x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></source>
+      <trans-unit id="5471299308121404696" datatype="html">
+        <source><x id="START_TAG_OPTION" ctype="x-option" equiv-text="ected&gt;"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option_1" equiv-text="&lt;option  *ngFor=&quot;let loc of locations | async&quot;&gt;"/> <x id="INTERPOLATION" equiv-text="{{loc.location}}"/> <x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">69,73</context>
+          <context context-type="linenumber">66,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4007122708031019885" datatype="html">
+        <source>Pick-up location</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">71,72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6173968454494380268" datatype="html">
         <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Pick-"/>Pick-up location is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">75,76</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3790820435463390940" datatype="html">
+        <source><x id="START_TAG_OPTION" ctype="x-option" equiv-text="cted&gt;"/>      Same as the pick-up location<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">81,82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8740282838939812144" datatype="html">
         <source>Return location</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">79,80</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7165266370454291578" datatype="html">
-        <source>Same as pick-up</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">83,84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2733374313182248694" datatype="html">
         <source>Pick-up date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">89,90</context>
+          <context context-type="linenumber">93</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="linenumber">94,95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4823152320724466560" datatype="html">
         <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Pick-"/>Pick-up date is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">92,93</context>
+          <context context-type="linenumber">96,97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8750137196277155756" datatype="html">
         <source>Pick-up time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">96,97</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8497528947328199741" datatype="html">
+        <source>Time</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">101,102</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="linenumber">118,119</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4027752602668447426" datatype="html">
         <source>Return date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">105,106</context>
+          <context context-type="linenumber">109</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="98703668180523103" datatype="html">
-        <source>Drop-off date</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">110,111</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7911130972181902137" datatype="html">
         <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Retur"/>Return date is required <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">108,109</context>
+          <context context-type="linenumber">112,113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6158985509447509837" datatype="html">
         <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Retu"/> Return date must be after pick-up date <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">109,110</context>
+          <context context-type="linenumber">113,114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6468490757182593650" datatype="html">
         <source>Return time</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">114,115</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3561443199537596655" datatype="html">
-        <source>Drop-of time</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">115</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="251281598645512439" datatype="html">
-        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-search&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="Search"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Search </source>
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-search&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="Search"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Search </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">123,127</context>
+          <context context-type="linenumber">127,131</context>
         </context-group>
       </trans-unit>
       <trans-unit id="499598226621959590" datatype="html">
         <source>Packages! <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;card-text&quot;&gt;"/> Ask us<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">142,143</context>
+          <context context-type="linenumber">146,147</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4356564047869647860" datatype="html">
         <source>Explore Banaadir beaches - and other top vacation destinations </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">143,144</context>
+          <context context-type="linenumber">147,148</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7752984457249839552" datatype="html">
-        <source>Jaziira Beach</source>
+        <source>Jazeera Beach</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">150,151</context>
+          <context context-type="linenumber">154,155</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8366128798008173840" datatype="html">
         <source>Jazeera Beach -Xeebta Jasiira- is just a few kilometers south of the capital of Somalia.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">151,152</context>
+          <context context-type="linenumber">155,156</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2137816181822679233" datatype="html">
         <source>Abaay-dhaxan</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">159,160</context>
+          <context context-type="linenumber">163,164</context>
         </context-group>
       </trans-unit>
       <trans-unit id="757326403473689727" datatype="html">
         <source>Abay Dhaxan beach is located between Mogadishu and Jazeera, Banadir - Somalia</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">160,161</context>
+          <context context-type="linenumber">164,165</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3889942985284616894" datatype="html">
         <source>Warsheekh</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">168,169</context>
+          <context context-type="linenumber">172,173</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8057514658713530375" datatype="html">
         <source>Warsheikh is a historical district with beautiful beaches, and it&apos;s only 65 KM away from Mogadishu.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">169,170</context>
+          <context context-type="linenumber">173,174</context>
         </context-group>
       </trans-unit>
     </body>

@@ -18,9 +18,9 @@
           <context context-type="linenumber">8</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3878402481723111016" datatype="html">
-        <source>Location: Mogadishu, Somalia </source>
-        <target>Goobta: Muqdisho, Soomaaliya </target>
+      <trans-unit id="8341742870104160968" datatype="html">
+        <source>Location: Erdoğan Rd, Mogadishu, Somalia </source>
+        <target>Goobta: Wadada Erdoğan, Muqdisho, Soomaaliya </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/contact/contact.component.html</context>
           <context context-type="linenumber">9</context>
@@ -50,6 +50,31 @@
           <context context-type="linenumber">12</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="3336840562550858646" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Home<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Home<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="948535978156015847" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Contacts<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Xiriirada<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">41</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7038266146985831760" datatype="html">
+        <source><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>About<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></source>
+        <target><x id="START_TAG_STRONG" ctype="x-strong" equiv-text="&lt;strong&gt;"/>Bulsho?<x id="CLOSE_TAG_STRONG" ctype="x-strong" equiv-text="&lt;/strong&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/header/header.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+
       <trans-unit id="1989651749024344579" datatype="html">
         <source><x id="INTERPOLATION" equiv-text="{{car.value[&apos;make&apos;]}}"/> - <x id="INTERPOLATION_1" equiv-text="{{car.value[&apos;model&apos;]}}"/> or similar</source>
         <target><x id="INTERPOLATION" equiv-text="{{car.value[&apos;make&apos;]}}"/> - <x id="INTERPOLATION_1" equiv-text="{{car.value[&apos;model&apos;]}}"/> ama kuwo lamid ah</target>
@@ -167,7 +192,7 @@
       </trans-unit>
       <trans-unit id="8956252629765503078" datatype="html">
         <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Telep"/>Telephone is required<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
-        <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Telep"/>Telefoonka nambarkiisaa waa loo baahanyahay <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></target>
+        <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Telep"/>Telefoonka waa loo baahanyahay <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentbooking/rentbooking.component.html</context>
           <context context-type="linenumber">39,40</context>
@@ -191,7 +216,7 @@
       </trans-unit>
       <trans-unit id="5608020325802458320" datatype="html">
         <source>Thank you for booking</source>
-        <target>Waad ku mahadsan tahay xajisada</target>
+        <target>Waad ku mahadsan tahay xajiskaaga</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentconfirm/rentconfirm.component.html</context>
           <context context-type="linenumber">4</context>
@@ -273,12 +298,19 @@
           <context context-type="linenumber">42,43</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="4399850127644069619" datatype="html">
-        <source><x id="START_TAG_OPTION" ctype="x-option" equiv-text="cted&gt;"/>Pick-up location<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option_1" equiv-text="&lt;option *ngFor=&quot;let loc of locations | async&quot;&gt;"/> <x id="INTERPOLATION" equiv-text="{{loc.location}}"/> <x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></source>
-        <target><x id="START_TAG_OPTION" ctype="x-option" equiv-text="cted&gt;"/>Goobta qaadashada<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option_1" equiv-text="&lt;option *ngFor=&quot;let loc of locations | async&quot;&gt;"/> <x id="INTERPOLATION" equiv-text="{{loc.location}}"/> <x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></target>
+      <trans-unit id="5471299308121404696" datatype="html">
+        <source><x id="START_TAG_OPTION" ctype="x-option" equiv-text="ected&gt;"/><x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/><x id="START_TAG_OPTION_1" ctype="x-option_1" equiv-text="&lt;option  *ngFor=&quot;let loc of locations | async&quot;&gt;"/> <x id="INTERPOLATION" equiv-text="{{loc.location}}"/> <x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">69,73</context>
+          <context context-type="linenumber">66,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4007122708031019885" datatype="html">
+        <source>Pick-up location</source>
+        <target>Goobta qaadashada</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">71,72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6173968454494380268" datatype="html">
@@ -286,23 +318,23 @@
         <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Pick-"/>Goobta qaadashada waa loo baahanyahay<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">75,76</context>
+          <context context-type="linenumber">73,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3790820435463390940" datatype="html">
+        <source><x id="START_TAG_OPTION" ctype="x-option" equiv-text="cted&gt;"/>      Same as the pick-up location<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></source>
+        <target><x id="START_TAG_OPTION" ctype="x-option" equiv-text="cted&gt;"/>      Waa goobta laga qaatay baabuurka<x id="CLOSE_TAG_OPTION" ctype="x-option" equiv-text="&lt;/option&gt;"/></target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">81,82</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8740282838939812144" datatype="html">
         <source>Return location</source>
-        <target>Goobta celinta</target>
+        <target>Goobta soo celinta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">79,80</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="7165266370454291578" datatype="html">
-        <source>Same as pick-up</source>
-        <target>la mida goobta qaadashada</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">83,84</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2733374313182248694" datatype="html">
@@ -310,11 +342,11 @@
         <target>Maalinta qaadashada</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">89,90</context>
+          <context context-type="linenumber">93</context>
         </context-group>
-        <context-group purpose="location">
+                <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">90</context>
+          <context context-type="linenumber">94,95</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4823152320724466560" datatype="html">
@@ -322,7 +354,7 @@
         <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Pick-"/>Maalinta qaadashada waa loo baahanyahay<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">92,93</context>
+          <context context-type="linenumber">96,97</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8750137196277155756" datatype="html">
@@ -330,11 +362,19 @@
         <target>Xiliga qaadashada</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">96,97</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8497528947328199741" datatype="html">
+        <source>Time</source>
+        <target>Waqtiga</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
+          <context context-type="linenumber">101,102</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">97</context>
+          <context context-type="linenumber">118,119</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4027752602668447426" datatype="html">
@@ -342,23 +382,19 @@
         <target>Maalinta soo celinta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">105,106</context>
+          <context context-type="linenumber">109</context>
         </context-group>
-      </trans-unit>
-      <trans-unit id="98703668180523103" datatype="html">
-        <source>Drop-off date</source>
-        <target>Maalinta soo celinta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">110,111</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7911130972181902137" datatype="html">
+	   <trans-unit id="7911130972181902137" datatype="html">
         <source><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Retur"/>Return date is required <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></source>
-        <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Drop-"/>Maalinta soo celinta waa loo baahanyahay<x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></target>
+        <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Retur"/>Maalinta soo celinta waa loo baahanyahay <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">108,109</context>
+          <context context-type="linenumber">112,113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6158985509447509837" datatype="html">
@@ -366,7 +402,7 @@
         <target><x id="START_SMALL_TEXT" ctype="x-small" equiv-text="Retu"/> Maalinta soo celinta waa inay ka dambaysaa maalinta qaadashada <x id="CLOSE_SMALL_TEXT" ctype="x-small" equiv-text="&lt;/small&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">109,110</context>
+          <context context-type="linenumber">113,114</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6468490757182593650" datatype="html">
@@ -374,23 +410,15 @@
         <target>Xiliga soo celinta</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">114,115</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3561443199537596655" datatype="html">
-        <source>Drop-of time</source>
-        <target>Xiliga soo celinta</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">115</context>
+          <context context-type="linenumber">117</context>
         </context-group>
       </trans-unit>
       <trans-unit id="251281598645512439" datatype="html">
-        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-search&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="Search"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Search </source>
-        <target><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;16&quot; height=&quot;16&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-search&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="Search"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Raadi </target>
+        <source><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-search&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="Search"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Search </source>
+        <target><x id="START_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="http://www.w3.org/2000/svg&quot; width=&quot;20&quot; height=&quot;20&quot; fill=&quot;currentColor&quot; class=&quot;bi bi-search&quot; viewBox=&quot;0 0 16 16&quot;&gt;"/><x id="START_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="&lt;path d=&quot;M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0&quot;/&gt;"/><x id="CLOSE_TAG__SVG_PATH" ctype="x-_svg_path" equiv-text="Search"/><x id="CLOSE_TAG__SVG_SVG" ctype="x-_svg_svg" equiv-text="&lt;/svg&gt;"/> Raadi </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">123,127</context>
+          <context context-type="linenumber">127,131</context>
         </context-group>
       </trans-unit>
       <trans-unit id="499598226621959590" datatype="html">
@@ -398,7 +426,7 @@
         <target>Packages! <x id="START_TAG_SPAN" ctype="x-span" equiv-text="&lt;span class=&quot;card-text&quot;&gt;"/> Na waydii<x id="CLOSE_TAG_SPAN" ctype="x-span" equiv-text="&lt;/span&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">126,127</context>
+          <context context-type="linenumber">146,147</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4356564047869647860" datatype="html">
@@ -406,15 +434,15 @@
         <target>Ku dalxiis xeebaha Banaadir - iyo meelaha kale ee dalxiiska ugu sarreeya </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">127,128</context>
+          <context context-type="linenumber">147,148</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7752984457249839552" datatype="html">
-        <source>Jaziira Beach</source>
-        <target>Xeebta Jasiira</target>
+        <source>Jazeera Beach</source>
+        <target>Xeebta Jaziira</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">134,135</context>
+          <context context-type="linenumber">154,155</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8366128798008173840" datatype="html">
@@ -422,7 +450,7 @@
         <target>Xeebta Jasiira- waxay dhowr kiilo mitir koonfur ka xigtaa caasimadda Soomaaliya.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">135,136</context>
+          <context context-type="linenumber">155,156</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2137816181822679233" datatype="html">
@@ -430,7 +458,7 @@
         <target>Abaay-dhaxan</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">143,144</context>
+          <context context-type="linenumber">163,164</context>
         </context-group>
       </trans-unit>
       <trans-unit id="757326403473689727" datatype="html">
@@ -438,7 +466,7 @@
         <target> Xeebta Abay Dhaxan waxay u dhaxaysaa Muqdisho iyo Jasiira, ee gobolka Banaadir - Soomaaliya</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">144,145</context>
+          <context context-type="linenumber">164,165</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3889942985284616894" datatype="html">
@@ -446,7 +474,7 @@
         <target>Warsheekh</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">152,153</context>
+          <context context-type="linenumber">172,173</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8057514658713530375" datatype="html">
@@ -454,7 +482,7 @@
         <target>Warsheekh waa degmo taariikhi ah oo leh xeebo aad u qurux badan, waxayna Muqdisho u jirtaa 65 KM oo kaliya.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/rentsearch/rentsearch.component.html</context>
-          <context context-type="linenumber">153,154</context>
+          <context context-type="linenumber">173,174</context>
         </context-group>
       </trans-unit>
     </body>

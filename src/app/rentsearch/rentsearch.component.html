@@ -10,35 +10,35 @@
           </div>
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img width="60%" height="200"  src="assets/background.jpg" class="d-block w-100" alt="...">
+              <img width="60%" height="225"  src="assets/background.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption show">
-                <h2 i18n style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Car Rental in Mogadishu</h2>
+                <h2 i18n >Car Rental in Mogadishu</h2>
               </div>
 
               <div class="carousel-caption d-none d-md-block">
-                <h2 i18n style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Car Rental in Mogadishu</h2>
+                <h2 i18n >Car Rental in Mogadishu</h2>
                 <h6 i18n>Rent cars through our online platform, and rest assured that we'll take care of your reservation.</h6>
               </div>
             </div>
             <div class="carousel-item">
-              <img width="60%" height="200"  src="assets/background.jpg" class="d-block w-100" alt="...">
+              <img width="60%" height="225"  src="assets/Liido_large.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption show">
-                <h2 i18n style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Best Car Rental Service!</h2>
+                <h2 i18n >Best Car Rental Service!</h2>
               </div>
               
               <div class="carousel-caption d-none d-md-block">
-                <h2 i18n style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Best Car Rental Service!</h2>
+                <h2 i18n >Best Car Rental Service!</h2>
                 <h6 i18n>Best rental prices with complete transparency, no concealed additional fees, as all charges are inclusive!, and payment is made at the time of pick up. </h6>
               </div>
             </div>
             <div class="carousel-item">
-              <img width="60%" height="200"  src="assets/background.jpg" class="d-block w-100" alt="...">
+              <img width="60%" height="225"  src="assets/background.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption show">
-                <h2 i18n style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Fast and Effective Service</h2>
+                <h2 i18n>Fast and Effective Service</h2>
               </div>
 
               <div class="carousel-caption d-none d-md-block">
-                <h2 i18n style="font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; color:rgb(243, 246, 247);">Fast and Effective Service</h2>
+                <h2 i18n >Fast and Effective Service</h2>
                 <h6 i18n>Choose the car of your choice for an unforgettable journey. Click it, and we'll prepare it for your adventure.</h6>
               </div>
             </div>
@@ -52,19 +52,17 @@
             <span class="visually-hidden">Next</span>
           </button>
         </div>
-        
     </div>
 
     </div>
     <div class="search-form">
       <form [formGroup]="searchForm" (ngSubmit)="manageSearch()">
-
            <div class="search-top">
             <div class="search-pickup">
               <div class="input-group">
                   <div class="form-floating">
                   <img src="assets/icons/location.svg">
-                  <select i18n class="form-select form-select-sm"  aria-label=".form-select-sm" id="pickupLoc" formControlName="pickupLoc" #pickupLoc>
+                  <select i18n class="form-select form-select-sm withImg"  aria-label=".form-select-sm" id="pickupLoc" formControlName="pickupLoc" #pickupLoc>
                     <option  selected></option>
                     <option  *ngFor="let loc of locations | async">
                       {{loc.location}} 
@@ -79,103 +77,53 @@
               <div class="input-group">
                 <div class="form-floating">
                 <img class="return-loc-img" src="assets/icons/location.svg">
-                <select i18n class="form-select form-select-sm return-loc" disabled="true"  aria-label=".form-select-sm" id="pickupLoc"  #pickupLoc>
-                  <!-- <input i18n-placeholder disabled="true"  type="text" class="form-control" style="margin-top: -25px;"  placeholder="Same as pick-up" aria-label="Same as pick-up"> -->
-                    <option selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Same as the pick-up</option>
+                <select i18n class="form-select form-select-sm return-loc withImg" disabled="true"  aria-label=".form-select-sm" id="pickupLoc"  #pickupLoc>
+                    <option selected>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Same as the pick-up location</option>
                 </select>
                   <label i18n for="floatingInputGrid">Return location</label>
                   </div>
               </div>
             </div>
           </div>
-
-
-
           <div class="search-top">
             <div class="search-pickup">
               <div class="search-date-pickup-group">
                 <div class="form-floating">
-                  <input i18n-placeholder type="date" [min]="currentDate" class="form-control" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate" (change)="onChange()">
-                  <label for="floatingInputGrid">Pick-up date</label>
+                  <img class="calendar-img" src="assets/icons/calendar.svg">
+                  <input i18n-placeholder  type="date" [min]="currentDate"  onfocus="this.showPicker()" class="form-control withImg" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate" (change)="onChange()">
+                  <label i18n for="floatingInputGrid">Pick-up date</label>
                  </div>  
                  <span i18n *ngIf="searchFormControl.pickupDate?.invalid && (searchFormControl.pickupDate?.dirty || searchFormControl.pickupDate?.touched || submitted)" class="text-danger"> <small>Pick-up date is required</small></span>
               </div>
               <div class="search-time">
                 <div class="form-floating">
-                  <input i18n-placeholder type="time" value="10:30" class="form-control " placeholder="Pick-up time" aria-label="Pick-up" formControlName="pickupTime">
-                  <label for="floatingInputGrid">Time</label>
+                  <input i18n-placeholder type="time" onfocus="this.showPicker()" value="10:30" class="form-control " placeholder="Pick-up time" aria-label="Pick-up" formControlName="pickupTime">
+                  <label i18n for="floatingInputGrid">Time</label>
                  </div>
                </div>
             </div>
             <div class="search-pickup">
              <div class="search-date-pickup-group">
                 <div class="form-floating" >
-                  <input i18n-placeholder type="date"  [min]="minReturnDate"  [max]="" class="form-control" placeholder="Drop-off date" aria-label="Drop-off date" formControlName="dropoffDate">
-                  <label for="floatingInputGrid">Return date</label>
+                  <img class="calendar-img" src="assets/icons/calendar.svg">
+                  <input i18n-placeholder  type="date"  [min]="minReturnDate"  [max]="" onfocus="this.showPicker()" class="form-control withImg" placeholder="Return date" aria-label="Drop-off date" formControlName="dropoffDate"(click)="onChange()" >
+                  <label i18n for="floatingInputGrid">Return date</label>
                  </div>  
                  <span i18n *ngIf="searchFormControl.dropoffDate?.invalid && (searchFormControl.dropoffDate?.dirty || searchFormControl.dropoffDate?.touched || submitted)" class="text-danger"> <small>Return date is required </small></span>
                  <span i18n *ngIf="formErr > 0" class="text-danger"> <small> Return date must be after pick-up date </small></span>
             </div>  
-
-              <div class="search-time">
+            <div class="search-time">
                 <div class="form-floating">
-                  <input i18n-placeholder type="time" value="10:30" class="form-control" placeholder="Drop-of time" aria-label="Drop-of time" formControlName="dropoffTime">
-                  <label for="floatingInputGrid">Time</label>
+                  <input i18n-placeholder type="time" onfocus="this.showPicker()" value="10:30" class="form-control" placeholder="Return time" aria-label="Return time" formControlName="dropoffTime">
+                  <label i18n for="floatingInputGrid">Time</label>
                  </div>
               </div>
-             
-    
             </div>
           </div>
           
-
-
-
-
-          <!-- <div class="row">
-            <td class="col  mt-2">
-              <div class="col testClass">
-                <div class="form-floating ">
-                 <input i18n-placeholder type="date" [min]="currentDate" class="form-control" placeholder="Pick-up date" aria-label="Pick-up date" formControlName="pickupDate" (change)="onChange()">
-                 <label for="floatingInputGrid">Pick-up date</label>
-                </div> 
-                <div class="form-floating input1">
-                 <input i18n-placeholder type="time" value="10:30" class="form-control " placeholder="Pick-up time" aria-label="Pick-up" formControlName="pickupTime">
-                 <label for="floatingInputGrid">Pick-up time</label>
-                </div>
-               </div>
-              <span i18n *ngIf="searchFormControl.pickupDate?.invalid && (searchFormControl.pickupDate?.dirty || searchFormControl.pickupDate?.touched || submitted)" class="text-danger"> <small>Pick-up date is required</small></span>
-                      
-            </td>
-
-            <td class="col  mt-2">
-              <div class="input-group">
-                <span i18n class="input-group-text">Pick-up time</span>
-                <input i18n-placeholder type="time" value="10:30" class="form-control" placeholder="Pick-up time" aria-label="Pick-up" formControlName="pickupTime">
-              </div>
-              </td>
-          </div>
-          <div class="row">
-            <td class="col mt-2">
-              <div class="input-group">
-              <span i18n class="input-group-text pe-3">Return date</span>  
-              <input i18n-placeholder type="date"  [min]="minReturnDate"  [max]="" class="form-control" placeholder="Drop-off date" aria-label="Drop-off date" formControlName="dropoffDate">
-              </div>
-              <span i18n *ngIf="searchFormControl.dropoffDate?.invalid && (searchFormControl.dropoffDate?.dirty || searchFormControl.dropoffDate?.touched || submitted)" class="text-danger"> <small>Return date is required </small></span>
-              <span i18n *ngIf="formErr > 0" class="text-danger"> <small> Return date must be after pick-up date </small></span>
-            </td>
-
-            <td class="col mt-2">
-              <div class="input-group">
-              <span i18n class="input-group-text pe-3">Return time</span>  
-              <input i18n-placeholder type="time" value="10:30" class="form-control" placeholder="Drop-of time" aria-label="Drop-of time" formControlName="dropoffTime">
-              </div>
-            </td>
-          </div> -->
-
         <div class="row">
           <td class="col-md-3 mt-3"> 
-            <button i18n type="button"  style="padding: 14px;" class="btn btn-primary w-100" (click)="getAvailableCars()"> 
+            <button i18n type="button"  style="padding: 12px;" class="btn btn-primary w-100" (click)="getAvailableCars()"> 
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
               </svg>
