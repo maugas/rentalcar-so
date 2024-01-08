@@ -5,8 +5,6 @@ h3{
   font-family: 'Source Sans Pro', sans-serif;
 }
 
-
-
 h2 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
   color:rgb(243, 246, 247);
@@ -86,6 +84,11 @@ h2 {
   margin-left: 10%;
 }
 
+.carousel-item img {
+  width:60%;
+  height:225px; 
+}
+
 .container-main {
   margin-top: 15px;
 }
@@ -147,6 +150,10 @@ h2 {
     gap: 10px; 
     justify-content: space-between;
     margin-top: 10px;
+  }
+  
+  .carousel-item img {
+    height:170px; 
   }
   
   .search-pickup {

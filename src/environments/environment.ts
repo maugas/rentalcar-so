@@ -4,6 +4,12 @@
 
 export const environment = {
   firebase : {
+    // apiKey: "AIzaSyAQqPbmfBQ5z-gcsebnZIZcaSl1uP3O0UQ",
+    // authDomain: "bulsho-car-rentals.firebaseapp.com",
+    // projectId: "bulsho-car-rentals",
+    // storageBucket: "bulsho-car-rentals.appspot.com",
+    // messagingSenderId: "155958988906",
+    // appId: "1:155958988906:web:99a743b2c529201f73fa13"
     apiKey: "AIzaSyCYj0oP0ZS-iFSG6VCdkWYHGsIYMUALj_U",
     authDomain: "rental-car-so.firebaseapp.com",
     projectId: "rental-car-so",

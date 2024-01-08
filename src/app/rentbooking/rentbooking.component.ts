@@ -1,10 +1,12 @@
-import { formatDate } from '@angular/common';
+import { CurrencyPipe, formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Car, User, Rental, RentalStatus, CarStatus, Booking } from '../models/car.model';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { CarService } from '../services/car.service';
 import { Router } from '@angular/router';
 import { BookingService } from '../services/booking.service';
+import emailjs, { EmailJSResponseStatus } from '@emailjs/browser';
+
 
 @Component({
   selector: 'app-rentbooking',
@@ -86,8 +88,10 @@ async booking(){
       carPrice : this.cPrice, totalCharge: this.cPrice * this.nDays,
       bookedDate: formatDate( new Date().toISOString(), 'dd/MM/yyyy hh:mm', 'en-US', 'GMT+3'),
     };    
-
-await this.carService.addCarBooking(carBooking)
+   
+    this.sendEmail(carBooking);
+ 
+    await this.carService.addCarBooking(carBooking)
       .then ((data) => {
         localStorage.clear();
         let booking = new Booking ();
@@ -108,6 +112,22 @@ async addUser(): Promise<boolean> {
           return false
         } 
       else {  return true  }
+}
+
+async sendEmail(carBooking: Booking) {
+ emailjs.init('Ucyn5-8454HN88rA9');
+ let result = await  emailjs.send("service_3denl6r","template_8xsk62j",{
+  to_name: "Bulsho team",
+  subject: "Booking Ref Id: " +  carBooking.bookingId ,
+  reply_to: carBooking.email,
+  name: carBooking.name,
+  carType: carBooking.carType,
+  startDate: carBooking.pickupDate,
+  endDate: carBooking.dropoffDate,
+  total: "$" + carBooking.totalCharge,
+  email: carBooking.email,
+  tel: carBooking.telefone
+  });    
 }
 
 }
